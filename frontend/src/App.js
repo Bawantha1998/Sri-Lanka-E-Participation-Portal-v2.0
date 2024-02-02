@@ -1,10 +1,11 @@
 import Home from "./components/card";
 import Newspress from "./pages/Newspress";
+import PublicConsultations from "./pages/PublicConsultations";
 
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
+      {/* <PublicConsultations /> */}
       <Newspress />
     </div>
   );
