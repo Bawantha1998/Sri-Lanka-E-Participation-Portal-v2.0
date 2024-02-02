@@ -11,7 +11,7 @@ function handleClick(event) {
   console.info("You clicked a breadcrumb.");
 }
 
-export default function newspressbreadcrumb() {
+export default function PublicConsultationbreadcrumb() {
   const breadcrumbs = [
     <Link
       underline="hover"
@@ -29,10 +29,10 @@ export default function newspressbreadcrumb() {
       href="/material-ui/getting-started/installation/"
       onClick={handleClick}
     >
-      Read
+      Participate
     </Link>,
     <Typography key="3" color="#FFFFFF">
-      News and Press Releases
+      Public Consultations
     </Typography>,
   ];
 
@@ -59,7 +59,7 @@ export default function newspressbreadcrumb() {
                 color="#FFFFFF"
                 fontSize={{ xs: 30, md: 50 }}
               >
-                News and Press Releases
+                Public Consultations
               </Typography>
             </Box>
           </Box>

@@ -1,28 +1,39 @@
 import React from "react";
-import { Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import PublicConsultationsCard from "../components/publicConsultations/PublicConsultationsCard";
+import PublicConsultationbreadcrumb from "../components/publicConsultations/PublicConsultationbreadcrumb";
 
 export default function PublicConsultations() {
   return (
     <div>
       <Grid container spacing={2}>
-        {/* <Grid container item sm={12} md={12}>
-    <Newspressbreadcrumb />
-  </Grid> */}
-        <Grid item md={6} sm={12}>
-          <PublicConsultationsCard />
+        <Grid container item sm={12} md={12}>
+          <PublicConsultationbreadcrumb />
         </Grid>
-        <Grid item md={6} sm={12}>
-          <PublicConsultationsCard />
+        <Grid item md={3} sm={6} xs={12}>
+          <Box marginLeft={3.5} marginTop={1}>
+            <PublicConsultationsCard />
+          </Box>
         </Grid>
-        <Grid item md={6} sm={12}>
-          <PublicConsultationsCard />
+        <Grid item md={3} sm={6} xs={12}>
+          <Box marginLeft={3.5} marginTop={1}>
+            <PublicConsultationsCard />
+          </Box>
         </Grid>
-        <Grid item md={6} sm={12}>
-          <PublicConsultationsCard />
+        <Grid item md={3} sm={6} xs={12}>
+          <Box marginLeft={3.5} marginTop={1}>
+            <PublicConsultationsCard />
+          </Box>
         </Grid>
-        <Grid item md={6} sm={12}>
-          <PublicConsultationsCard />
+        <Grid item md={3} sm={6} xs={12}>
+          <Box marginLeft={3.5} marginTop={1}>
+            <PublicConsultationsCard />
+          </Box>
+        </Grid>
+        <Grid item md={3} sm={6} xs={12}>
+          <Box marginLeft={3.5} marginTop={1}>
+            <PublicConsultationsCard />
+          </Box>
         </Grid>
       </Grid>
     </div>

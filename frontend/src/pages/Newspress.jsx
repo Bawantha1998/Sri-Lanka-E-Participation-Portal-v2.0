@@ -1,8 +1,8 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import React from "react";
 import NewspressCard from "../components/newspress/NewspressCard";
 import Newspressbreadcrumb from "../components/newspress/Newspressbreadcrumb";
-import PublicConsultationsCard from "../components/publicConsultations/PublicConsultationsCard";
+
 import Card from "../components/card";
 
 // const noOfCards = [1, 2, 3, 4, 5, 6];
