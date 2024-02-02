@@ -3,13 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
-import image from "../../images/new.jpg";
 import { Button, CardActions, Container } from "@mui/material";
 
 export default function NewspressCard() {
@@ -17,7 +11,7 @@ export default function NewspressCard() {
   return (
     <div>
       <Container>
-        <Card sx={{ display: "flex" }}>
+        <Card sx={{ height: "auto", display: "flex" }}>
           <Box
             sx={{
               minWidth: 100,
@@ -55,7 +49,7 @@ export default function NewspressCard() {
               </Typography>
               <Typography variant="h5">
                 Seychelles Coast Guard rescues lost fishing vessel “Lorenzo
-                Putha 4” in the Arabian Sea
+                Putha 4” in the Arabian
               </Typography>
             </CardContent>
             <CardActions>
