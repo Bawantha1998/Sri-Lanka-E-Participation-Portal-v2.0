@@ -1,78 +1,3 @@
-// import React from "react";
-// import Grid from "@mui/material/Grid";
-// import Typography from "@mui/material/Typography";
-// import { Container } from "@mui/material";
-
-// import Box from "@mui/material/Box";
-// import Card from "@mui/material/Card";
-// import CardContent from "@mui/material/CardContent";
-// import CardMedia from "@mui/material/CardMedia";
-
-// import temppic1 from "../../images/temppic3.jpg";
-
-// import { Button, CardActionArea, CardActions } from "@mui/material";
-
-// export default function Allimagegallery() {
-//   return (
-//     <Container>
-//       <br></br>
-//       <Grid container spacing={2}>
-//         <Grid item xs={12} lg={3} md={6}>
-//           <Card sx={{ display: "flex" }}>
-//             <CardMedia
-//               component="img"
-//               sx={{ width: "100%" }}
-//               image={temppic1}
-//               alt="Live from space album cover"
-//             />
-//           </Card>
-//         </Grid>
-//         <Grid item xs={12} lg={3} md={6}>
-//           <Card sx={{ display: "flex" }}>
-//             <CardMedia
-//               component="img"
-//               sx={{ width: "100%" }}
-//               image={temppic1}
-//               alt="Live from space album cover"
-//             />
-//           </Card>
-//         </Grid>
-//         <Grid item xs={12} lg={3} md={6}>
-//           <Card sx={{ display: "flex" }}>
-//             <CardMedia
-//               component="img"
-//               sx={{ width: "100%" }}
-//               image={temppic1}
-//               alt="Live from space album cover"
-//             />
-//           </Card>
-//         </Grid>
-//         <Grid item xs={12} lg={3} md={6}>
-//           <Card sx={{ display: "flex" }}>
-//             <CardMedia
-//               component="img"
-//               sx={{ width: "100%" }}
-//               image={temppic1}
-//               alt="Live from space album cover"
-//             />
-//           </Card>
-//         </Grid>
-//         <Grid item xs={12} lg={3} md={6}>
-//           <Card sx={{ display: "flex" }}>
-//             <CardMedia
-//               component="img"
-//               sx={{ width: "100%" }}
-//               image={temppic1}
-//               alt="Live from space album cover"
-//             />
-//           </Card>
-//         </Grid>
-//       </Grid>
-//     </Container>
-//   );
-// }
-
-
 import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -139,6 +64,7 @@ export default function Allimagegallery() {
         onClose={handleCloseCarousel}
         maxWidth="md"
         fullWidth
+         scroll="body"
       >
         <IconButton
           edge="end"
