@@ -1,3 +1,4 @@
+
 // import Home from "./components/card";
 import Newspress from "./pages/Newspress";
 import Allimagegallery from "./components/pages/allimagegallery";
@@ -21,6 +22,16 @@ function App() {
       </BrowserRouter>
 
       {/* <Home /> */}
+
+
+
+
+function App() {
+  return (
+    <div className="App">
+  
+    
+
     </div>
   );
 }
