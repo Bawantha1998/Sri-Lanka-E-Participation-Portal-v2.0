@@ -1,11 +1,13 @@
-import Home from "./components/card";
-import Newspress from "./pages/Newspress";
+// import Home from "./components/card";
+// import Newspress from "./pages/Newspress";
+import Event from "./components/Event/Eventcard"
 
 function App() {
   return (
     <div className="App">
       {/* <Home /> */}
-      <Newspress />
+      <Event/>
+      {/* <Newspress /> */}
     </div>
   );
 }
