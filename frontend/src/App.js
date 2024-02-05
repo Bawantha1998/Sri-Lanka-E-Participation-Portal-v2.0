@@ -1,11 +1,13 @@
 
 
 import Newspress from "./pages/Newspress";
-import Allimagegallery from "./pages/allimagegallery";
-import Photogallery from "./pages/photogallery";
+import Allimagegallery from "./components/pages/allimagegallery";
+import Photogallery from "./components/pages/photogallery";
+import Event from "./pages/event"
 import PublicConsultations from "./pages/PublicConsultations";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+import FeedBack from "./components/Feedback/FeedBack";
+import GenaralFeedback from "./components/GenaralFeedback/Genaral FeedBack"
 
 function App() {
   return (
@@ -20,7 +22,10 @@ function App() {
             path="/public-consultations"
             element={<PublicConsultations />}
           />
+           <Route path="/event" element={<Event />} />
           <Route path="/Allimages" element={<Allimagegallery />} />
+          <Route path="/feedback" element={<FeedBack />} />
+          <Route path="/genaral-feedback" element={<GenaralFeedback />} />
         </Routes>
       </BrowserRouter>
 
