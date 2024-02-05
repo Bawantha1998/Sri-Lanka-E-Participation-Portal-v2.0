@@ -8,10 +8,10 @@ import CloseIcon from "@mui/icons-material/Close";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 
-import temppic1 from "../../images/temppic3.jpg";
-import temppic2 from "../../images/temppic1.jpg";
-import temppic3 from "../../images/temppic2.jpg";
-import temppic4 from "../../images/temppic4.jpg";
+import temppic1 from "../images/temppic3.jpg";
+import temppic2 from "../images/temppic1.jpg";
+import temppic3 from "../images/temppic2.jpg";
+import temppic4 from "../images/temppic4.jpg";
 
 export default function Allimagegallery() {
   const [openCarousel, setOpenCarousel] = useState(false);
