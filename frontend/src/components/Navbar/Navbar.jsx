@@ -187,7 +187,7 @@ function Navbar() {
           >
             <img src={eplogo} alt="Logo" style={{ width: "", height: "45px",marginLeft:"-16px" }} />
           </Typography>
-          <Box sx={{ display: { xs: "none", md: "flex" } ,fontSize:"20px" }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }  }}>
             <Button color="inherit">Home</Button>
             <Button color="inherit">Participate</Button>
             <Button color="inherit">Read</Button>
