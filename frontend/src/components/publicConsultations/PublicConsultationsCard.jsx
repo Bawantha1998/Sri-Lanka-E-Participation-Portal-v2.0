@@ -9,7 +9,12 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Imgs from "../../images/8.jpg";
 
-export default function PublicConsultationsCard() {
+export default function PublicConsultationsCard({
+  title,
+  subheader,
+  image,
+  description,
+}) {
   const handleExpandClick = () => {};
 
   return (
@@ -17,19 +22,15 @@ export default function PublicConsultationsCard() {
       <CardHeader
         title={
           <div style={{ fontSize: "20px" }}>
-            <b> Guidelines for Digital Signatures</b>
+            <b>{title}</b>
           </div>
         }
-        subheader="September 14, 2016"
+        subheader={subheader}
       />
-      <CardMedia component="img" height="194" image={Imgs} alt="Paella dish" />
+      <CardMedia component="img" height="194" image={Imgs} alt="Card Image" />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Guidelines for Digital Signatures" is a key milestone in ICTA policy
-          roadmap, which is already being approved and recognized by the
-          government for implementation. The guidelines aim to direct the
-          government staff towards the adoption of a digital signature to
-          authenticate official documents. The effective usage of digital..
+          {description}
         </Typography>
       </CardContent>
       <CardActions>
