@@ -1,33 +1,12 @@
-
-
-import Newspress from "./pages/Newspress";
-import Allimagegallery from "./components/pages/allimagegallery";
-import Photogallery from "./components/pages/photogallery";
-import PublicConsultations from "./pages/PublicConsultations";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/card";
 
 function App() {
   return (
- 
-
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Photogallery />} />
-          <Route path="/newspress" element={<Newspress />} />
-          <Route
-            path="/public-consultations"
-            element={<PublicConsultations />}
-          />
-          <Route path="/Allimages" element={<Allimagegallery />} />
-        </Routes>
-      </BrowserRouter>
-
-
-  )
+    <div className="App">
+      <Home />
+    </div>
+  );
 }
-
-
-
 
 export default App;
 
