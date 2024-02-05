@@ -1,10 +1,15 @@
+
+
 import Newspress from "./pages/Newspress";
-import Allimagegallery from "./pages/allimagegallery";
-import Photogallery from "./pages/photogallery";
+import Allimagegallery from "./components/pages/allimagegallery";
+import Photogallery from "./components/pages/photogallery";
 import PublicConsultations from "./pages/PublicConsultations";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
+ 
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Photogallery />} />
@@ -16,6 +21,13 @@ function App() {
           <Route path="/Allimages" element={<Allimagegallery />} />
         </Routes>
       </BrowserRouter>
+
+
   )
 }
+
+
+
+
 export default App;
+
