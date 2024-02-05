@@ -1,8 +1,8 @@
 
-
+import Navbar from "./components/Navbar/Navbar";
 import Newspress from "./pages/Newspress";
-import Allimagegallery from "./components/pages/allimagegallery";
-import Photogallery from "./components/pages/photogallery";
+import Allimagegallery from "./pages/allimagegallery";
+import Photogallery from "./pages/photogallery";
 import Event from "./pages/event"
 import PublicConsultations from "./pages/PublicConsultations";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
       <Navbar/>
         <Routes>
-          <Route path="/" element={<Photogallery />} />
+          <Route path="/photogallery" element={<Photogallery />} />
           <Route path="/newspress" element={<Newspress />} />
           <Route
             path="/public-consultations"

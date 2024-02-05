@@ -89,7 +89,6 @@ function Navbar() {
                 xs:'11px',
                 sm:'12px',
                 md:'14px',
-                lg:'15px',
                 xl:'15.5px'
 
               },
@@ -99,9 +98,10 @@ function Navbar() {
             }}
           >
             <img
+            sx={{ display: { xs: "flex", md: "flex", sm: "flex" }}}
               src={logo2}
               alt="Logo"
-              style={{ width: "15px", height: "15px" }}
+              style={{ width: "16px", height: "16px" }}
             />
             <b  style={{display:"flex"}} >
               An Official Website of Sri Lanka Government {""}
@@ -150,11 +150,11 @@ function Navbar() {
           >
             <img src={eplogo} alt="Logo" style={{ width: "", height: "45px",marginLeft:"-16px" }} />
           </Typography>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" } ,fontSize:"20px" }}>
             <Button color="inherit">Home</Button>
             <Button color="inherit">Participate</Button>
             <Button color="inherit">Read</Button>
-            <Button color="inherit">Photo Gallery</Button>
+            <Button color="inherit" href="/photogallery">Photo Gallery</Button>
             <Button color="inherit">Who We are </Button>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -202,7 +202,7 @@ function Navbar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            <img src={eplogo} alt="Logo" style={{ width: "", height: "45px", marginLeft:"-16px"}} />
+            <img src={eplogo} alt="Logo" style={{ width: "", height: "30px", marginLeft:"-16px"}} />
           </Typography>
           <Search sx={{ display: { xs: "flex", md: "flex" } }}>
             <SearchIconWrapper>
