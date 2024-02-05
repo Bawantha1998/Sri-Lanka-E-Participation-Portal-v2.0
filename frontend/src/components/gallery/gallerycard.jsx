@@ -16,12 +16,12 @@ import { Link } from "react-router-dom";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
 export default function Gallerycard() {
-  const images = [temppic1, temppic2, temppic3, temppic4, temppic1];
+  const images = [temppic1, temppic2, temppic3, temppic4, temppic1,temppic4];
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{ mt: 1, mr: 1, mb: 1, ml: 1 }}>
       {images.map((image) => (
-        <Grid item xs={12} lg={4} md={6}>
+        <Grid item xs={12} lg={3} md={6}>
           <Card sx={{ display: "flex" }}>
             <CardMedia
               component="img"
