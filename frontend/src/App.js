@@ -1,4 +1,5 @@
 
+
 import Newspress from "./pages/Newspress";
 import Allimagegallery from "./components/pages/allimagegallery";
 import Photogallery from "./components/pages/photogallery";
@@ -8,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
  
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Photogallery />} />
@@ -20,6 +22,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
+
   )
 }
 
@@ -27,3 +30,4 @@ function App() {
 
 
 export default App;
+
