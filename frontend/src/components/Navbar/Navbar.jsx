@@ -75,7 +75,7 @@ function Navbar() {
 
   return (
     <div>
-      <AppBar  sx={{ boxShadow: "none" }} >
+      {/* <AppBar  sx={{ boxShadow: "none",width:"100%" }} >
         <Toolbar
           style={{ minHeight: 25, color: "#575050" }}
           sx={{ 
@@ -103,10 +103,10 @@ function Navbar() {
               alt="Logo"
               style={{ width: "16px", height: "16px" }}
             />
-            <b  style={{display:"flex"}} >
+            <b  style={{display:"flex",marginTop:"1%"}} >
               An Official Website of Sri Lanka Government {""}
               <span style={{ color: "#1e88e5", textDecoration: "underline" }}>
-                {" "}
+                {" "} */}
                 {/* <Accordion  style={{marginLeft:"20px",height:"10px",fontSize:"12px" ,width:"25%"}}>
                   <AccordionSummary style={{marginTop:"0"}}
                     expandIcon={<ExpandMoreIcon />}
@@ -121,15 +121,52 @@ function Navbar() {
                     lobortis eget.
                   </AccordionDetails>
                 </Accordion> */}
-              </span>
+              {/* </span>
             </b>
           </Typography>
         </Toolbar>
       </AppBar>
-      <br />
+      <br /> */}
+       <AppBar
+        position="fixed"
+        style={{ color: "#1e88e5" }}
+        sx={{  boxShadow: "none",bgcolor: "#f5f5f5" }}
+      >
+        <Toolbar   style={{ minHeight: 25, color: "#575050" }}
+          sx={{ 
+            bgcolor: "#bdbdbd",
+          }}>
+        
+        <Typography
+            style={{ marginLeft: "25px" }}
+            sx={{
+              fontSize: {
+                xs:'11px',
+                sm:'12px',
+                md:'14px',
+                xl:'15.5px'
 
+              },
+              display: { xs: "flex", md: "flex", sm: "flex" },
+              gap: 0.5,
+           
+            }}
+          >
+            <img
+            sx={{ display: { xs: "flex", md: "flex", sm: "flex" }}}
+              src={logo2}
+              alt="Logo"
+              style={{ width: "16px", height: "16px" }}
+            />
+            <b  style={{display:"flex",marginTop:"1%"}} >
+              An Official Website of Sri Lanka Government {""}
+           </b>
+              </Typography>   
+        </Toolbar>
+      </AppBar>
+<br/>
       <AppBar
-        position="static"
+        position="sticky"
         style={{ color: "#1e88e5" }}
         sx={{ bgcolor: "#f5f5f5" }}
       >
