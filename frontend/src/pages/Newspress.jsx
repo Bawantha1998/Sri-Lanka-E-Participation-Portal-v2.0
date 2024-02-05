@@ -3,7 +3,7 @@ import React from "react";
 import NewspressCard from "../components/newspress/NewspressCard";
 import Newspressbreadcrumb from "../components/newspress/Newspressbreadcrumb";
 
-import Card from "../components/card";
+
 
 // const noOfCards = [1, 2, 3, 4, 5, 6];
 
