@@ -21,6 +21,7 @@ export default function PublicConsultations() {
         <Grid container item sm={12} md={12}>
           <PublicConsultationbreadcrumb />
         </Grid>
+
         {cardData.map((data, index) => (
           <Grid item key={index} md={3} sm={6} xs={12}>
             <Box marginLeft={3.5} marginTop={1}>
@@ -33,6 +34,7 @@ export default function PublicConsultations() {
             </Box>
           </Grid>
         ))}
+
       </Grid>
     </div>
   );
