@@ -9,13 +9,14 @@ app.use(cors()); // Enable CORS for all routes
 
 const cardData = [
   {
-    title: "Guidelines for Digital Signatures",
+    title:
+      "Guidelines for Digital Signatures Guidelines for Digital Signatures for Digital Signatures",
     subheader: "September 14, 2016",
     description:
       '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
   },
   {
-    title: "Card 2 Title",
+    title: "National Digital Government and Governance Policy for Sri Lanka",
     subheader: "Card 2 Subheader",
     description:
       '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
