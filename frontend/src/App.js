@@ -8,6 +8,7 @@ import PublicConsultations from "./pages/PublicConsultations";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FeedBack from "./components/Feedback/FeedBack";
 import GenaralFeedback from "./components/GenaralFeedback/Genaral FeedBack"
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/feedback" element={<FeedBack />} />
           <Route path="/genaral-feedback" element={<GenaralFeedback />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
 
 
