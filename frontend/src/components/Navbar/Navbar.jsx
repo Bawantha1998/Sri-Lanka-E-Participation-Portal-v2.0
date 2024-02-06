@@ -14,7 +14,7 @@ import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import logo2 from "../../images/image1.png";
 import eplogo from "../../images/ep.png";
-import logo4 from '../../images/logosl.png';
+import logo4 from "../../images/logosl.png";
 import Accordion from "@mui/material/Accordion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -75,7 +75,7 @@ function Navbar() {
 
   return (
     <div>
-      <AppBar  sx={{ boxShadow: "none" }} >
+      {/* <AppBar  sx={{ boxShadow: "none",width:"100%" }} >
         <Toolbar
           style={{ minHeight: 25, color: "#575050" }}
           sx={{ 
@@ -89,7 +89,6 @@ function Navbar() {
                 xs:'11px',
                 sm:'12px',
                 md:'14px',
-                lg:'15px',
                 xl:'15.5px'
 
               },
@@ -99,37 +98,97 @@ function Navbar() {
             }}
           >
             <img
+            sx={{ display: { xs: "flex", md: "flex", sm: "flex" }}}
               src={logo2}
               alt="Logo"
-              style={{ width: "15px", height: "15px" }}
+              style={{ width: "16px", height: "16px" }}
             />
-            <b  style={{display:"flex"}} >
+            <b  style={{display:"flex",marginTop:"1%"}} >
               An Official Website of Sri Lanka Government {""}
               <span style={{ color: "#1e88e5", textDecoration: "underline" }}>
-                {" "}
-                {/* <Accordion  style={{marginLeft:"20px",height:"10px",fontSize:"12px" ,width:"25%"}}>
-                  <AccordionSummary style={{marginTop:"0"}}
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1-content"
-                    id="panel1-header"
-                  >
-                    Here’s how you know 
-                  </AccordionSummary>
-                  <AccordionDetails style={{width:"100%"}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </AccordionDetails>
-                </Accordion> */}
-              </span>
+                {" "} */}
+      {/* </span>
             </b>
           </Typography>
         </Toolbar>
       </AppBar>
+      <br /> */}
+      <AppBar
+        position="fixed"
+        style={{ color: "#1e88e5" }}
+        sx={{ boxShadow: "none", bgcolor: "#f5f5f5" }}
+      >
+        <Toolbar
+          style={{ minHeight: 25, color: "#575050" }}
+          sx={{
+            bgcolor: "#bdbdbd",
+          }}
+        >
+          <Typography
+            style={{ marginLeft: "25px" }}
+            sx={{
+              fontSize: {
+                xs: "10px",
+                sm: "11px",
+                md: "12px",
+                xl: "13.5px",
+              },
+              display: { xs: "flex", md: "flex", sm: "flex" },
+              gap: 0.5,
+            }}
+          >
+            <Accordion
+              sx={{
+                bgcolor: "#bdbdbd",
+                width: "100%",
+                border: "none", // Remove border style
+                boxShadow: "none",
+                 // Remove box shadow
+                 }}
+
+            >
+              <AccordionSummary
+                sx={{ display: "flex" }}
+                style={{ marginTop: "0"}}
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1-content"
+                id="panel1-header"
+              >
+                <img
+                  sx={{ display: { xs: "flex", md: "flex", sm: "flex" } }}
+                  src={logo2}
+                  alt="Logo"
+                  style={{ width: "16px", height: "16px" }}
+                />
+                An Official Website of Sri Lanka Government Here’s how you know
+              </AccordionSummary>
+              <AccordionDetails
+                style={{ width: "auto" }}
+                sx={{ display: "flex", gap: "2rem" }}
+              >
+                <p>
+                  {" "}
+                  <b> Official Websites use .gov.lk</b> <br />A .gov.lk website
+                  belongs <br/>to an official government <br/>organization in the Sri
+                  Lanka.
+                </p>
+
+                <p>
+                  <b> Secure .gov.lk websites use HTTPS</b> <br />A lock or
+                  https: // means you've safely<br/> connected to the .gov.lk
+                  website. <br/>Share sensitive information only on <br/>official,secure
+                  websites.
+                </p>
+              </AccordionDetails>
+            </Accordion>
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <br />
       <br />
 
       <AppBar
-        position="static"
+        position=""
         style={{ color: "#1e88e5" }}
         sx={{ bgcolor: "#f5f5f5" }}
       >
@@ -141,20 +200,30 @@ function Navbar() {
             aria-label="logo"
             sx={{ display: { xs: "none", md: "flex" } }}
           >
-              <img src={logo4} alt="Logo" style={{ width: "auto", height: "45px" }} />
+            <img
+              src={logo4}
+              alt="Logo"
+              style={{ width: "auto", height: "45px" }}
+            />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
           >
-            <img src={eplogo} alt="Logo" style={{ width: "", height: "45px",marginLeft:"-16px" }} />
+            <img
+              src={eplogo}
+              alt="Logo"
+              style={{ width: "", height: "45px", marginLeft: "-16px" }}
+            />
           </Typography>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Button color="inherit">Home</Button>
             <Button color="inherit">Participate</Button>
             <Button color="inherit">Read</Button>
-            <Button color="inherit">Photo Gallery</Button>
+            <Button color="inherit" href="/photogallery">
+              Photo Gallery
+            </Button>
             <Button color="inherit">Who We are </Button>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -166,15 +235,15 @@ function Navbar() {
             >
               <MenuRoundedIcon />
             </IconButton>
-            <Menu 
-              style={{marginTop:"11px"}}
+            <Menu
+              style={{ marginTop: "11px" }}
               anchorEl={anchorNav}
               open={Boolean(anchorNav)}
               onClick={closeMenu}
               sx={{ display: { xs: "flex", md: "none" } }}
             >
               <MenuList
-                style={{ color: "#1e88e5" ,width:"1000px" }}
+                style={{ color: "#1e88e5", width: "1000px" }}
                 sx={{ textTransform: "uppercase", bgcolor: "f5f5f5" }}
               >
                 <MenuItem> Home</MenuItem>
@@ -195,14 +264,22 @@ function Navbar() {
             aria-label="logo"
             sx={{ display: { xs: "flex", md: "none" } }}
           >
-             <img src={logo4} alt="Logo" style={{ width: "auto", height: "45px" }} />
+            <img
+              src={logo4}
+              alt="Logo"
+              style={{ width: "auto", height: "45px" }}
+            />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            <img src={eplogo} alt="Logo" style={{ width: "", height: "45px", marginLeft:"-16px"}} />
+            <img
+              src={eplogo}
+              alt="Logo"
+              style={{ width: "", height: "30px", marginLeft: "-16px" }}
+            />
           </Typography>
           <Search sx={{ display: { xs: "flex", md: "flex" } }}>
             <SearchIconWrapper>
@@ -215,6 +292,9 @@ function Navbar() {
           </Search>
         </Toolbar>
       </AppBar>
+      <div>
+        
+      </div>
     </div>
   );
 }
