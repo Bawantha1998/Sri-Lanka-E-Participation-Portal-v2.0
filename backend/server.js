@@ -45,9 +45,36 @@ const cardData = [
       '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
   },
 ];
+const nwsData = [
+  {
+    title: "Guidelines for Digital Signatures",
+    date: "September 14, 2016",
+  },
+  {
+    title: "Guidelines for Digital Signatures",
+    date: "September 14, 2016",
+  },
+  {
+    title: "Guidelines for Digital Signatures",
+    date: "September 14, 2016",
+  },
+  {
+    title: "Card 4 Title",
+    subheader: "Card 4 Subheader",
+    description:
+      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
+  },
+  {
+    title: "Guidelines for Digital Signatures",
+    date: "September 14, 2016",
+  },
+];
 
 app.get("/api/cards", (req, res) => {
   res.json(cardData);
+});
+app.get("/api/newspress", (req, res) => {
+  res.json(nwsData);
 });
 
 app.listen(port, () => {

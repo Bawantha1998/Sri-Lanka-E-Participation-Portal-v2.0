@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 
 function handleClick(event) {
   event.preventDefault();
