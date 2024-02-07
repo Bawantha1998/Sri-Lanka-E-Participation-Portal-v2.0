@@ -1,4 +1,3 @@
-
 import Navbar from "./components/Navbar/Navbar";
 
 import Newspress from "./pages/Newspress";
@@ -13,13 +12,14 @@ import GenaralFeedback from "./components/GenaralFeedback/Genaral FeedBack";
 import FAQs from "./pages/FAQs";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-      <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/photogallery" element={<Photogallery />} />
 
         <Route path="/newspress" element={<Newspress />} />
@@ -27,6 +27,7 @@ function App() {
         <Route path="/event" element={<Event />} />
         <Route path="/Allimages" element={<Allimagegallery />} />
         <Route path="/feedback" element={<FeedBack />} />
+        <Route path="/contact-us" element={<ContactUs />} />
 
         <Route path="/genaral-feedback" element={<GenaralFeedback />} />
         <Route path="/faqs" element={<FAQs />} />
@@ -34,7 +35,6 @@ function App() {
       <Footer />
     </BrowserRouter>
   );
-
 }
 
 export default App;
