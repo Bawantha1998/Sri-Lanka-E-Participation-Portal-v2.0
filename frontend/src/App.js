@@ -7,11 +7,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FeedBack from "./components/Feedback/FeedBack";
 import GenaralFeedback from "./components/GenaralFeedback/Genaral FeedBack";
 import Navbar from "./components/Navbar/Navbar";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Photogallery />} />
         <Route path="/newspress" element={<Newspress />} />
@@ -19,6 +20,7 @@ function App() {
         <Route path="/event" element={<Event />} />
         <Route path="/Allimages" element={<Allimagegallery />} />
         <Route path="/feedback" element={<FeedBack />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/genaral-feedback" element={<GenaralFeedback />} />
       </Routes>
     </BrowserRouter>
