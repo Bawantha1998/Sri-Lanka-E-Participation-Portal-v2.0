@@ -1,13 +1,12 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
+
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Button, CardActions, Container } from "@mui/material";
 
-export default function NewspressCard() {
-  const theme = useTheme();
+export default function NewspressCard({ title, date }) {
   return (
     <div>
       <Container>
@@ -47,10 +46,7 @@ export default function NewspressCard() {
               >
                 News and Press Releases
               </Typography>
-              <Typography variant="h5">
-                Seychelles Coast Guard rescues lost fishing vessel “Lorenzo
-                Putha 4” in the Arabian
-              </Typography>
+              <Typography variant="h5">{title}</Typography>
             </CardContent>
             <CardActions>
               <Button size="small" color="primary" variant="contained">
