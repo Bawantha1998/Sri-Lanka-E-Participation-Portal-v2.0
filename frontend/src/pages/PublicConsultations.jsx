@@ -18,11 +18,12 @@ export default function PublicConsultations() {
   return (
     <div>
       <Grid container spacing={2}>
-        <Grid container item sm={12} md={12}>
+        <Grid item xs={12}>
           <PublicConsultationbreadcrumb />
         </Grid>
+
         {cardData.map((data, index) => (
-          <Grid item key={index} md={3} sm={6} xs={12}>
+          <Grid item key={index} lg={3} md={4} sm={6} xs={12}>
             <Box marginLeft={3.5} marginTop={1}>
               <PublicConsultationsCard
                 title={data.title}

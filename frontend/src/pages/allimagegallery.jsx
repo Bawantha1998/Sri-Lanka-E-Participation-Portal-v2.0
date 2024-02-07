@@ -13,6 +13,8 @@ import temppic2 from "../images/temppic1.jpg";
 import temppic3 from "../images/temppic2.jpg";
 import temppic4 from "../images/temppic4.jpg";
 
+import Gallerybreadcrumb from "../components/gallery/gallerybreadcrumb";
+
 export default function Allimagegallery() {
   const [openCarousel, setOpenCarousel] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -39,9 +41,15 @@ export default function Allimagegallery() {
   const images = [temppic1, temppic2, temppic3, temppic4, temppic1];
 
   return (
-    <Container>
+    <Grid container spacing={2}>
+    <Grid container item sm={12} md={12}>
+        <Gallerybreadcrumb/>
+      </Grid>
+   
+      
       <br />
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{ mt: 1, mr: 1, mb: 1, ml: 1 }}>
+      
         {images.map((image, index) => (
           <Grid item xs={12} lg={3} md={6} key={index}>
             <Card
@@ -95,7 +103,8 @@ export default function Allimagegallery() {
           ))}
         </Carousel>
       </Dialog>
-    </Container>
+   
+    </Grid>
   );
 }
 
