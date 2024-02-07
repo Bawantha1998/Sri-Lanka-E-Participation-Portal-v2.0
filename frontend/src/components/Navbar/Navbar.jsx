@@ -188,7 +188,7 @@ function Navbar() {
       <br />
 
       <AppBar
-        position=""
+         position=""
         style={{ color: "#1e88e5" }}
         sx={{ bgcolor: "#f5f5f5" }}
       >

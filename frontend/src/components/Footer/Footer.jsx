@@ -12,7 +12,7 @@ import {
 // Define styled components for styling
 const RootContainer = styled('div')({
     backgroundColor: '#1e88e5',
-    maxWidth: '1240px',
+    maxWidth: '100%',
     margin: 'auto',
     padding: '40px',
     color: '#ffffff',
@@ -32,11 +32,14 @@ const SectionContainer = styled('div')({
 
 const Footer = () => {
     return (
-        <RootContainer>
+        <>
+        <br />
+         <RootContainer>
+            
             <Grid container spacing={4}>
                 <Grid item xs={12} lg={4}>
-                    <Typography variant="h5" gutterBottom>E-Participation-Portal</Typography>
-                    <Typography variant="body1" gutterBottom>"Streaming Victory, One Epic Moment at a Time"</Typography>
+                    <Typography variant="h6" gutterBottom>eParticipation Portal | Government of Sri Lanka</Typography>
+                    <Typography variant="body1" gutterBottom>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta rerum, vitae beatae impedit consequatur, illum sequi eum iure qui nesciunt quisquam nisi accusamus sapiente, quae ullam voluptatem? Harum, error debitis?</Typography>
                     <IconContainer>
                         <FaFacebookSquare size={30}/>
                         <FaGithubSquare size={30}/>
@@ -47,7 +50,7 @@ const Footer = () => {
                 </Grid>
                 <Grid item xs={12} lg={8} container spacing={4}>
                     <Grid item xs={12} md={6} lg={3} component={SectionContainer}>
-                        <Typography variant="h6" gutterBottom>About Us</Typography>
+                        <Typography variant="h6" gutterBottom>Participate</Typography>
                         <ul>
                             <li>Who We Are</li>
                             <li>Mandate</li>
@@ -73,7 +76,7 @@ const Footer = () => {
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3} component={SectionContainer}>
-                        <Typography variant="h6" gutterBottom>About Us</Typography>
+                        <Typography variant="h6" gutterBottom>User Policies</Typography>
                         <ul>
                             <li>Who We Are</li>
                             <li>Mandate</li>
@@ -86,7 +89,7 @@ const Footer = () => {
                     </Grid>
 
                         <Grid item xs={12} md={6} lg={3} component={SectionContainer}>
-                        <Typography variant="h6" gutterBottom>About Us</Typography>
+                        <Typography variant="h6" gutterBottom>For Media</Typography>
                         <ul>
                             <li>Who We Are</li>
                             <li>Mandate</li>
@@ -100,6 +103,8 @@ const Footer = () => {
                 </Grid>
             </Grid>
         </RootContainer>
+        </>
+       
     );
 }
 
