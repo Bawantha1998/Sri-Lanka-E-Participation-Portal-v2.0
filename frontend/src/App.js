@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Newspress from "./pages/Newspress";
 import Allimagegallery from "./pages/allimagegallery";
 import Photogallery from "./pages/photogallery";
+import UsefulLinks from "./pages/UsefulLinks";
 
 import Event from "./pages/event";
 import PublicConsultations from "./pages/PublicConsultations";
@@ -14,7 +15,7 @@ import FAQs from "./pages/FAQs";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
-
+import Termofuse from "./pages/Termofuse";
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
         <Route path="/Allimages" element={<Allimagegallery />} />
         <Route path="/feedback" element={<FeedBack />} />
         <Route path="/contact-us" element={<ContactUs />} />
-
+        <Route path="/useful-links" element={<UsefulLinks />} />
+        <Route path="/termofuse" element={<Termofuse />} />
         <Route path="/genaral-feedback" element={<GenaralFeedback />} />
         <Route path="/faqs" element={<FAQs />} />
       </Routes>
