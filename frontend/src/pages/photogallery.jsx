@@ -28,8 +28,8 @@ export default function Photogallery() {
       </Grid>
      
       {galleryData.map((data, index) => (
-          <Grid item key={index} md={3} sm={6} xs={12}>
-            <Box marginLeft={3.5} marginTop={1} marginRight={1}>
+          <Grid item key={index} lg={4} md={4} sm={6} xs={12}>
+            <Box marginLeft={1} marginTop={1} marginRight={1.5}>
               <Gallerycard
                 Name={data.Name}
                 date={data.date}
