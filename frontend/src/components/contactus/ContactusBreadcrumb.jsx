@@ -10,8 +10,7 @@ function handleClick(event) {
   event.preventDefault();
   console.info("You clicked a breadcrumb.");
 }
-
-export default function PublicConsultationbreadcrumb() {
+export default function ContactusBreadcrumb() {
   const breadcrumbs = [
     <Link
       underline="hover"
@@ -22,22 +21,22 @@ export default function PublicConsultationbreadcrumb() {
     >
       Home
     </Link>,
-    <Link
-      underline="hover"
-      key="2"
-      color="#FFFFFF"
-      href="/material-ui/getting-started/installation/"
-      onClick={handleClick}
-    >
-      Participate
-    </Link>,
+    // <Link
+    //   underline="hover"
+    //   key="2"
+    //   color="#FFFFFF"
+    //   href="/material-ui/getting-started/installation/"
+    //   onClick={handleClick}
+    // >
+    //   Read
+    // </Link>,
     <Typography key="3" color="#FFFFFF">
-      Public Consultations
+      Contact Us
     </Typography>,
   ];
 
   return (
-    <Box sx={{ bgcolor: "#345AE3", width: "100%", height: "auto" }} >
+    <Box sx={{ bgcolor: "#345AE3", width: "100%", height: "auto" }}>
       <Box marginLeft={3.5} marginTop={2}>
         <Stack spacing={2}>
           <Box>
@@ -54,12 +53,12 @@ export default function PublicConsultationbreadcrumb() {
             </Breadcrumbs>
             <Box>
               <Typography
-                sx={{ fontWeight: { xs: "normal", md: "bold" } }}
+                sx={{ fontWeight: { xs: "bold", md: "bold" } }}
                 key="3"
                 color="#FFFFFF"
                 fontSize={{ xs: 30, md: 50 }}
               >
-                Public Consultations
+                Contact Us
               </Typography>
             </Box>
           </Box>
