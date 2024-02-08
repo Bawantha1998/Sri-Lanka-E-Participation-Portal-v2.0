@@ -1,5 +1,4 @@
 import Navbar from "./components/Navbar/Navbar";
-
 import Newspress from "./pages/Newspress";
 import Allimagegallery from "./pages/allimagegallery";
 import Photogallery from "./pages/photogallery";
@@ -8,7 +7,6 @@ import PublicConsultations from "./pages/PublicConsultations";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FeedBack from "./components/Feedback/FeedBack";
 import GenaralFeedback from "./components/GenaralFeedback/Genaral FeedBack";
-
 import FAQs from "./pages/FAQs";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
