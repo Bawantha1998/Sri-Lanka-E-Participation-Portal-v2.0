@@ -1,7 +1,9 @@
 import { Box, Grid, Typography, colors } from "@mui/material";
 import React from "react";
 import Link from "@mui/material/Link";
-
+import Usefullinkimage from "../images/usefullinks.png"
+import CardMedia from "@mui/material/CardMedia";
+import { motion } from "framer-motion";
 import UsefullinksBreadcrumb from "../components/usefulLinks/UsefullinksBreadcrumb";
 export default function UsefulLinks() {
   return (
@@ -11,8 +13,14 @@ export default function UsefulLinks() {
           <UsefullinksBreadcrumb />
         </Grid>
 
-        <Grid item xs={12} md={6} lg={6} marginLeft={3} marginTop={1}>
+        <Grid item xs={12} md={6} lg={6} marginLeft={6} marginTop={1}>
+        <motion.div
+              initial={{ x: -200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.0 }} // Adjust transition as needed
+            >
           <Box>
+            
             <Link
               href="#"
               underline="hover"
@@ -156,11 +164,23 @@ export default function UsefulLinks() {
             </Link>
 
             <hr style={{ width: "50%", textAlign: "left", marginLeft: 0 }} />
+            
           </Box>
+          </motion.div>
         </Grid>
-        <Grid item marginLeft={3} marginTop={1}>
-          test
-        </Grid>
+        <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.0 }}
+          >
+        <CardMedia
+              component="img"
+              sx={{ width: 300,ml:6,mr:2 }}
+              image={Usefullinkimage}
+              alt="Live from space album cover"
+            />
+            {/* <img style={{ width:"350px", marginLeft:"100px"}} src={Usefullinkimage}/> */}
+        </motion.div>
       </Grid>
     </div>
   );
