@@ -71,12 +71,60 @@ const nwsData = [
   },
 ];
 
+
+const galleryData= [
+  {
+    Name: "Guidelines for Digital ",
+    date: "September 14, 2016",
+    short_description:
+      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
+  },
+  {
+    Name: "Card 2 Name",
+    date: "September 14, 2016",
+    short_description:
+      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
+  },
+  {
+    Name: "Card 3 Name",
+    date: "September 14, 2016",
+    short_description:
+      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
+  },
+  {
+    Name: "Card 4 Name",
+    date: "September 14, 2016",
+    short_description:
+      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
+  },
+  {
+    Name: "Card 4 Name",
+    date: "September 14, 2016",
+    short_description:
+      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
+  },
+  {
+    Name: "Card 4 Name",
+    date: "September 14, 2016",
+    short_description:
+      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
+      
+  },
+];
+
 app.get("/api/cards", (req, res) => {
   res.json(cardData);
 });
+
 app.get("/api/newspress", (req, res) => {
   res.json(nwsData);
 });
+
+app.get("/api/gallerycard", (req, res) => {
+  res.json(galleryData);
+});
+
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

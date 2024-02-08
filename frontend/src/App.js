@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Newspress from "./pages/Newspress";
 import Allimagegallery from "./pages/allimagegallery";
 import Photogallery from "./pages/photogallery";
+
 import Event from "./pages/event";
 import PublicConsultations from "./pages/PublicConsultations";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -13,6 +14,7 @@ import FAQs from "./pages/FAQs";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
+
 
 function App() {
   return (
