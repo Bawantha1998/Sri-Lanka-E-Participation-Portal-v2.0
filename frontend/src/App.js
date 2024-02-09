@@ -21,14 +21,12 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/photogallery" element={<Photogallery />} />
-
         <Route path="/newspress" element={<Newspress />} />
         <Route path="/public-consultations" element={<PublicConsultations />} />
         <Route path="/event" element={<Event />} />
         <Route path="/Allimages" element={<Allimagegallery />} />
         <Route path="/feedback" element={<FeedBack />} />
         <Route path="/contact-us" element={<ContactUs />} />
-
         <Route path="/genaral-feedback" element={<GenaralFeedback />} />
         <Route path="/faqs" element={<FAQs />} />
       </Routes>
