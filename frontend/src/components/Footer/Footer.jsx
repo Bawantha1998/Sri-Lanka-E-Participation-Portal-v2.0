@@ -39,7 +39,7 @@ const Footer = () => {
             <Grid container spacing={4}>
                 <Grid item xs={12} lg={4}>
                     <Typography variant="h6" gutterBottom>eParticipation Portal | Government of Sri Lanka</Typography>
-                    <Typography variant="body1" gutterBottom>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta rerum, vitae beatae impedit consequatur, illum sequi eum iure qui nesciunt quisquam nisi accusamus sapiente, quae ullam voluptatem? Harum, error debitis?</Typography>
+                    <Typography variant="body1" gutterBottom>Lorem ipsum dolor, , illum sequi sapiente, quae ullam voluptatem? Harum, error debitis?</Typography>
                     <IconContainer>
                         <FaFacebookSquare size={30}/>
                         <FaGithubSquare size={30}/>
@@ -57,8 +57,7 @@ const Footer = () => {
                             <li>Vision</li>
                             <li>Mission</li>
                             <li>Company Structure</li>
-                            <li>Milestones</li>
-                            <li>Our Team</li>
+                         
                         </ul>
                     </Grid>
                     {/* Other Grid items go here */}
@@ -70,8 +69,7 @@ const Footer = () => {
                             <li>Vision</li>
                             <li>Mission</li>
                             <li>Company Structure</li>
-                            <li>Milestones</li>
-                            <li>Our Team</li>
+                           
                         </ul>
                     </Grid>
 
@@ -83,8 +81,7 @@ const Footer = () => {
                             <li>Vision</li>
                             <li>Mission</li>
                             <li>Company Structure</li>
-                            <li>Milestones</li>
-                            <li>Our Team</li>
+                            
                         </ul>
                     </Grid>
 
@@ -96,8 +93,7 @@ const Footer = () => {
                             <li>Vision</li>
                             <li>Mission</li>
                             <li>Company Structure</li>
-                            <li>Milestones</li>
-                            <li>Our Team</li>
+                           
                         </ul>
                     </Grid>
                 </Grid>
