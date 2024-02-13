@@ -7,6 +7,9 @@ import { API_BASE_URL } from "../utils/constants";
 
 export default function Newspress() {
   const [newsData, setNewsData] = useState([]);
+  const handleCardClick = (link) => {
+    window.open(link);
+  };
 
   useEffect(() => {
     const fetchAllContents = async () => {
@@ -27,8 +30,14 @@ export default function Newspress() {
           <Newspressbreadcrumb />
         </Grid>
         {newsData.map((data, index) => (
-          <Grid item key={index} md={6} sm={12}>
-            <NewspressCard title={data.title} date={data.date} />
+          <Grid
+            onClick={() => handleCardClick(data.link)}
+            item
+            key={index}
+            md={6}
+            sm={12}
+          >
+            <NewspressCard title={data.title} date={data.pubDate} />
           </Grid>
         ))}
       </Grid>
