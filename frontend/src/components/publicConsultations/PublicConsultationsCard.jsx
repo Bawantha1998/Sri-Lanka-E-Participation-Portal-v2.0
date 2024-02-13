@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Imgs from "../../images/8.jpg";
+import { API_IMG_URL } from "../../utils/constants";
 
 export default function PublicConsultationsCard({
   title,
@@ -14,8 +14,18 @@ export default function PublicConsultationsCard({
   image,
   description,
 }) {
+  const [hovered, setHovered] = React.useState(false);
   return (
-    <Card sx={{ maxWidth: 350 }}>
+    <Card
+      sx={{
+        maxWidth: 350,
+        "&:hover": {
+          bgcolor: hovered ? "#D3D3D3" : "#",
+        },
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <CardHeader
         titleTypographyProps={{
           variant: "h6",
@@ -24,7 +34,12 @@ export default function PublicConsultationsCard({
         title={title}
         subheader={subheader}
       />
-      <CardMedia component="img" height="194" image={Imgs} alt="Card Image" />
+      <CardMedia
+        component="img"
+        height="194"
+        src={`${API_IMG_URL}/${image}`} // Accessing image from props
+        alt={title}
+      />
       <CardContent>
         <Typography
           variant="body2"

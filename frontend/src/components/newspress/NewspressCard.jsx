@@ -14,10 +14,22 @@ const cardVariants = {
 };
 
 const NewspressCard = ({ title, date }) => {
+  const [hovered, setHovered] = React.useState(false);
+
   return (
     <motion.div initial="hidden" animate="visible" variants={cardVariants}>
       <Container>
-        <Card sx={{ height: "auto", display: "flex" }}>
+        <Card
+          sx={{
+            height: "auto",
+            display: "flex",
+            "&:hover": {
+              bgcolor: hovered ? "#D3D3D3" : "#",
+            },
+          }}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
           <Box
             sx={{
               minWidth: 100,
