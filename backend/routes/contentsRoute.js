@@ -8,6 +8,6 @@ router.get("/contents", contentsController.getContents);
 router.get("/participate/:slug", contentsController.getContentsBySlug);
 router.get("/contentviews", contentsController.getContentviews);
 router.get("/carousel", contentsController.getCarousel);
-router.get("/notcontents",contentsController.getnotContentviews);
+router.get("/notcontents", contentsController.getnotContentviews);
 
 module.exports = router;

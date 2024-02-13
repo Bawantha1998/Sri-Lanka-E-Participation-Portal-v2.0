@@ -12,13 +12,16 @@ import FAQs from "./pages/FAQs";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
-
 import Termofuse from "./pages/Termofuse";
-import Newsletter from "./pages/newsletter";
 
-// import Comment from "./components/Comment/Comment"
+
+
+
+
+import Newsletter from "./pages/Newsletter";
+import Comment from "./components/Comment/Comment"
+
 import PublicConsultationsView from "./components/publicConsultations/PublicConsultationView";
-
 
 function App() {
   return (
@@ -27,7 +30,10 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/photogallery" element={<Photogallery />} />
-        <Route path="/newspress" element={<Newspress />} />
+        <Route
+          path="/news-and-press-releases/latest-news"
+          element={<Newspress />}
+        />
         <Route path="/public-consultations" element={<PublicConsultations />} />
         <Route path="/event" element={<Event />} />
         <Route path="/Allphotogallery" element={<Allimagegallery />} />
