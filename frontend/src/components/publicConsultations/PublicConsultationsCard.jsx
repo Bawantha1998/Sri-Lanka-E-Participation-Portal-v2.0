@@ -7,12 +7,14 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { API_IMG_URL } from "../../utils/constants";
+import { Link } from "react-router-dom";
 
 export default function PublicConsultationsCard({
   title,
   subheader,
   image,
   description,
+  url,
 }) {
   const [hovered, setHovered] = React.useState(false);
   return (
@@ -56,6 +58,7 @@ export default function PublicConsultationsCard({
         </Typography>
       </CardContent>
       <CardActions>
+        <Link to={url}>
         <Button
           sx={{
             bgcolor: "#345AE3",
@@ -70,6 +73,7 @@ export default function PublicConsultationsCard({
         >
           View More
         </Button>
+        </Link>
       </CardActions>
     </Card>
   );

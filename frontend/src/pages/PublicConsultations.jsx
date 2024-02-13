@@ -34,6 +34,7 @@ export default function PublicConsultations() {
                 subheader={content.subheader} // Assuming you have a subheader field
                 image={content.content_image}
                 description={content.content_short_description} // Assuming content_short_description is the description
+                url={content.content_url}
               />
             </Box>
           </Grid>

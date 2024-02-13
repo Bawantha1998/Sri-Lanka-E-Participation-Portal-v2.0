@@ -15,7 +15,7 @@ import ContactUs from "./pages/ContactUs";
 import Termofuse from "./pages/Termofuse";
 import Newsletter from "./pages/newsletter";
 import Comment from "./components/Comment/Comment"
-import PublicConsultationsView from "./components/publicConsultations/PublicConsultationView";
+import PublicConsultationView from "./components/publicConsultations/PublicConsultationView";
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
         <Route path="/genaral-feedback" element={<GenaralFeedback />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/newsletter" element={<Newsletter/>}/>
-        <Route path="/public-consultationsview" element={< PublicConsultationsView/>} />
+        <Route path="/public-consultations/:content_id" element={<PublicConsultationView/>}/>
 
       </Routes>
       <Footer />
