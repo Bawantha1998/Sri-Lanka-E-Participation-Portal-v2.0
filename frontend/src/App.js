@@ -15,7 +15,7 @@ import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 
 import Termofuse from "./pages/Termofuse";
-import Newsletter from "./pages/newsletter";
+import Newsletter from "./pages/Newsletter";
 
 import Comment from "./components/Comment/Comment"
 import PublicConsultationsView from "./components/publicConsultations/PublicConsultationView";
