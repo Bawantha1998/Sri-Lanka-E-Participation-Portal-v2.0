@@ -10,7 +10,7 @@ export default function PublicConsultations() {
   useEffect(() => {
     // Fetch data from your backend API using Axios
     axios
-      .get("http://localhost:3001/api/cards")
+      .get("http://localhost:3000/consultations")
       .then((response) => setCardData(response.data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
