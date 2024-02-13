@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { Box, Grid } from "@mui/material";
 import axios from "axios";
+import { motion } from "framer-motion";
+
 
 import Gallerybreadcrumb from '../components/gallery/gallerybreadcrumb';
 import Gallerycard from '../components/gallery/gallerycard';
@@ -21,39 +23,30 @@ export default function Photogallery() {
   
   return (
     <div>
-   
-    <Grid container spacing={2}>
-      <Grid container item sm={12} md={12}>
-        <Gallerybreadcrumb/>
-      </Grid>
-     
-      {galleryData.map((data, index) => (
+      <Grid container spacing={2}>
+        <Grid container item sm={12} md={12}>
+          <Gallerybreadcrumb />
+        </Grid>
+        {galleryData.map((data, index) => (
           <Grid item key={index} lg={4} md={4} sm={6} xs={12}>
-            <Box marginLeft={1} marginTop={1} marginRight={1.5}>
-              <Gallerycard
-                Name={data.Name}
-                date={data.date}
-                image={data.image}
-                short_description={data.short_description}
-              />
-            </Box>
+            <motion.div
+              initial={{ x: -200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.0, delay: index * 0.1 }} // Adjust transition as needed
+            >
+              <Box marginLeft={1} marginTop={1} marginRight={1.5}>
+                <Gallerycard
+                  Name={data.Name}
+                  date={data.date}
+                  image={data.image}
+                  short_description={data.short_description}
+                />
+              </Box>
+            </motion.div>
           </Grid>
-         ))}
-    </Grid>
-     
-      
-    
-  </div>
-//     <Container>
-// <br></br>
-    
-//        <Gallerybreadcrumb/>
-//         <Gallerycard/>
-        
-        
+        ))}
+      </Grid>
+    </div>
 
-   
-     
-//     </Container>
   )
 }

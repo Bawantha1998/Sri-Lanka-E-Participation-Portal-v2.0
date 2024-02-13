@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Container, Dialog, IconButton } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import CloseIcon from "@mui/icons-material/Close";
-
+import { motion } from "framer-motion";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 
@@ -52,6 +52,11 @@ export default function Allimagegallery() {
       
         {images.map((image, index) => (
           <Grid item xs={12} lg={3} md={6} key={index}>
+            <motion.div
+              initial={{ x: -200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.0, delay: index * 0.1 }} // Adjust transition as needed
+            >
             <Card
               sx={{ display: "flex" }}
               onClick={() => handleOpenCarousel(index)}
@@ -63,6 +68,7 @@ export default function Allimagegallery() {
                 alt={`Image ${index + 1}`}
               />
             </Card>
+            </motion.div>
           </Grid>
         ))}
       </Grid>
