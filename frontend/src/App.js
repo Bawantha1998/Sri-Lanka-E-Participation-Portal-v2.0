@@ -15,10 +15,10 @@ import ContactUs from "./pages/ContactUs";
 import Termofuse from "./pages/Termofuse";
 
 import Newsletter from "./pages/Newsletter";
-import Comment from "./components/Comment/Comment";
+
 import PublicConsultationsView from "./components/publicConsultations/PublicConsultationView";
 
-import Newsletter from "./pages/newsletter";
+
 import Comment from "./components/Comment/Comment"
 import PublicConsultationView from "./components/publicConsultations/PublicConsultationView";
 
@@ -34,8 +34,8 @@ function App() {
           path="/news-and-press-releases/latest-news"
           element={<Newspress />}
         />
-        <Route path="/public-consultations" element={<PublicConsultations />} />
-        <Route path="/event" element={<Event />} />
+        <Route path="/consultations/public-consultations" element={<PublicConsultations />} />
+        <Route path="/consultations/event" element={<Event />} />
         <Route path="/Allphotogallery" element={<Allimagegallery />} />
         <Route path="/feedback" element={<FeedBack />} />
         <Route path="/contact-us" element={<ContactUs />} />
@@ -51,7 +51,7 @@ function App() {
         />
 
         <Route path="/newsletter" element={<Newsletter/>}/>
-        <Route path="/public-consultations/:content_id" element={<PublicConsultationView/>}/>
+        <Route path="/consultations/public-consultations/:content_id" element={<PublicConsultationView/>}/>
 
 
       </Routes>
