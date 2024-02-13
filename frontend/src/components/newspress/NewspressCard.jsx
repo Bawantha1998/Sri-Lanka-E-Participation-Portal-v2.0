@@ -35,11 +35,11 @@ const NewspressCard = ({ title, date }) => {
                 marginTop: "30%",
               }}
             >
-              March
+              {moment(date).format("MMM")}
               <br />
-              <b style={{ fontSize: "35px" }}>10</b>
+              <b style={{ fontSize: "35px" }}>{moment(date).format("DD")}</b>
               <br />
-              2024
+              {moment(date).format("YYYY")}
             </Typography>
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
