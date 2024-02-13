@@ -1,131 +1,51 @@
-// server.js
 const express = require("express");
 const cors = require("cors");
+const morgan = require("morgan");
 
 const app = express();
-const port = 3001;
 
-app.use(cors()); // Enable CORS for all routes
+app.use(cors());
+app.use(express.json());
+app.use(morgan("tiny"));
+app.use(express.static("public"));
 
-const cardData = [
-  {
-    title:
-      "Guidelines for Digital Signatures Guidelines for Digital Signatures for Digital Signatures",
-    subheader: "September 14, 2016",
-    description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
-  },
-  {
-    title: "National Digital Government and Governance Policy for Sri Lanka",
-    subheader: "Card 2 Subheader",
-    description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
-  },
-  {
-    title: "Card 3 Title",
-    subheader: "Card 3 Subheader",
-    description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
-  },
-  {
-    title: "Card 4 Title",
-    subheader: "Card 4 Subheader",
-    description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
-  },
-  {
-    title: "Card 4 Title",
-    subheader: "Card 4 Subheader",
-    description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
-  },
-  {
-    title: "Card 4 Title",
-    subheader: "Card 4 Subheader",
-    description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
-  },
-];
-const nwsData = [
-  {
-    title: "Guidelines for Digital Signatures",
-    date: "September 14, 2016",
-  },
-  {
-    title: "Guidelines for Digital Signatures",
-    date: "September 14, 2016",
-  },
-  {
-    title: "Guidelines for Digital Signatures",
-    date: "September 14, 2016",
-  },
-  {
-    title: "Card 4 Title",
-    subheader: "Card 4 Subheader",
-    description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap, which is already being approved and recognized by the government for implementation. The guidelines aim to direct the government staff towards the adoption of a digital signature to authenticate official documents. The effective usage of digital..',
-  },
-  {
-    title: "Guidelines for Digital Signatures",
-    date: "September 14, 2016",
-  },
-];
+require("dotenv").config({ path: "./.env" });
+const port = process.env.PORT || 5000;
 
+app.use("/content", require("./routes/contentsRoute"));
 
-const galleryData= [
-  {
-    Name: "Guidelines for Digital ",
-    date: "September 14, 2016",
-    short_description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
-  },
-  {
-    Name: "Card 2 Name",
-    date: "September 14, 2016",
-    short_description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
-  },
-  {
-    Name: "Card 3 Name",
-    date: "September 14, 2016",
-    short_description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
-  },
-  {
-    Name: "Card 4 Name",
-    date: "September 14, 2016",
-    short_description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
-  },
-  {
-    Name: "Card 4 Name",
-    date: "September 14, 2016",
-    short_description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
-  },
-  {
-    Name: "Card 4 Name",
-    date: "September 14, 2016",
-    short_description:
-      '"Guidelines for Digital Signatures" is a key milestone in ICTA policy roadmap,  ',
-      
-  },
-];
+app.use("/feedback", require("./routes/feedbackRoute"));
 
-app.get("/api/cards", (req, res) => {
-  res.json(cardData);
+app.use("/search", require("./routes/searchRoute"));
+
+app.use("/esearch", require("./routes/EventSearchroute"));
+
+app.use("/allsearch", require("./routes/allsearchRoute"));
+
+app.use("/event", require("./routes/eventsRoute"));
+
+app.use("/gf", require("./routes/eventsRoute"));
+
+app.use("/NewsandPressReleases", require("./routes/newspressReleaseRoute"));
+
+app.use("/Newsletter", require("./routes/newsletterRoute"));
+
+app.use("/gallery", require("./routes/photogalleryRoute"));
+
+const axios = require("axios");
+
+app.get("/getRssData", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://eparticipation.gov.lk/epart-admin/news/latest"
+    );
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
-
-app.get("/api/newspress", (req, res) => {
-  res.json(nwsData);
-});
-
-app.get("/api/gallerycard", (req, res) => {
-  res.json(galleryData);
-});
-
-
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Connected to backend. Listening on port ${port}`);
 });

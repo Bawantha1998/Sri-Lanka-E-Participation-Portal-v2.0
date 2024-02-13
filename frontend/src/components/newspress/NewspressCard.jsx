@@ -1,20 +1,26 @@
 import * as React from "react";
-
+import { motion } from "framer-motion";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Button, CardActions, Container } from "@mui/material";
+import moment from "moment";
+import { Parser } from "html-to-react";
 
-export default function NewspressCard({ title, date }) {
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const NewspressCard = ({ title, date }) => {
   return (
-    <div>
+    <motion.div initial="hidden" animate="visible" variants={cardVariants}>
       <Container>
         <Card sx={{ height: "auto", display: "flex" }}>
           <Box
             sx={{
               minWidth: 100,
-
               height: "auto",
               bgcolor: "#1C7ED8",
             }}
@@ -30,9 +36,9 @@ export default function NewspressCard({ title, date }) {
               }}
             >
               March
-              <br></br>
+              <br />
               <b style={{ fontSize: "35px" }}>10</b>
-              <br></br>
+              <br />
               2024
             </Typography>
           </Box>
@@ -56,6 +62,8 @@ export default function NewspressCard({ title, date }) {
           </Box>
         </Card>
       </Container>
-    </div>
+    </motion.div>
   );
-}
+};
+
+export default NewspressCard;

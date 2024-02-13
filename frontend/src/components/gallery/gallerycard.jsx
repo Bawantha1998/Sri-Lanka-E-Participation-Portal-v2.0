@@ -45,7 +45,7 @@ export default function Gallerycard({Name,
                 </Typography>
               </CardContent>
               <CardActions>
-                <Link to="/Allimages">
+                <Link to="/Allphotogallery">
                   <Button size="small" color="primary" variant="contained">
                     View Gallery
                   </Button>
