@@ -59,7 +59,7 @@ export default function Comment() {
                         key={num} 
                         initial={{ x: -200, opacity: 0 }} 
                         animate={{ x: 0, opacity: 1 }} 
-                        transition={{ delay: num * 0.5 }}
+                        transition={{ delay: num * 0.7 }}
                     >
                         <Paper style={{ padding: "40px 20px"}}>
                             <Grid container wrap="nowrap" spacing={2}>
