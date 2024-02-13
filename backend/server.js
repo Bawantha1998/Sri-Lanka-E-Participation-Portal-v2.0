@@ -4,7 +4,6 @@ const morgan = require("morgan");
 
 const app = express();
 
-
 app.use(cors());
 app.use(express.json());
 app.use(morgan("tiny"));
@@ -45,7 +44,7 @@ app.get("/getRssData", async (req, res) => {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
   }
-
+});
 
 app.listen(port, () => {
   console.log(`Connected to backend. Listening on port ${port}`);
