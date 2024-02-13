@@ -11,7 +11,9 @@ export default function PublicConsultations() {
   useEffect(() => {
     const fetchAllContents = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/content/contentviews`);
+        const res = await axios.get(
+          `${API_BASE_URL}/consultations/public-consultations`
+        );
         setCardData(res.data);
       } catch (err) {
         console.log(err);

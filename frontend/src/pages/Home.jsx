@@ -14,7 +14,9 @@ const Home = () => {
   useEffect(() => {
     const fetchAllContents = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/content/contents`);
+        const res = await axios.get(
+          `${API_BASE_URL}/consultations/latest-public-consultations`
+        );
         setCardData(res.data);
       } catch (err) {
         console.log(err);
