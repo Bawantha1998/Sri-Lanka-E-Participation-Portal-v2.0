@@ -16,6 +16,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import Termofuse from "./pages/Termofuse";
+import Newsletter from "./pages/newsletter";
 
 function App() {
   return (
@@ -28,13 +29,14 @@ function App() {
         <Route path="/newspress" element={<Newspress />} />
         <Route path="/public-consultations" element={<PublicConsultations />} />
         <Route path="/event" element={<Event />} />
-        <Route path="/Allimages" element={<Allimagegallery />} />
+        <Route path="/Allphotogallery" element={<Allimagegallery />} />
         <Route path="/feedback" element={<FeedBack />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/useful-links" element={<UsefulLinks />} />
         <Route path="/termofuse" element={<Termofuse />} />
         <Route path="/genaral-feedback" element={<GenaralFeedback />} />
         <Route path="/faqs" element={<FAQs />} />
+        <Route path="/newsletter" element={<Newsletter/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
