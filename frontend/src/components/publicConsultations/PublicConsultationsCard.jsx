@@ -7,6 +7,7 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { API_IMG_URL } from "../../utils/constants";
+import { Parser } from "html-to-react";
 
 export default function PublicConsultationsCard({
   title,
@@ -29,14 +30,15 @@ export default function PublicConsultationsCard({
       <CardHeader
         titleTypographyProps={{
           variant: "h6",
-          style: { lineHeight: "1", minHeight: "3em", fontWeight: "bold" },
+          style: { lineHeight: "1", minHeight: "4em", fontWeight: "bold" },
         }}
         title={title}
         subheader={subheader}
       />
       <CardMedia
         component="img"
-        height="194"
+        maxWidth="auto"
+        height="90px"
         src={`${API_IMG_URL}/${image}`} // Accessing image from props
         alt={title}
       />
@@ -52,7 +54,7 @@ export default function PublicConsultationsCard({
             WebkitBoxOrient: "vertical",
           }}
         >
-          {description}
+          {new Parser().parse(description)}
         </Typography>
       </CardContent>
       <CardActions>

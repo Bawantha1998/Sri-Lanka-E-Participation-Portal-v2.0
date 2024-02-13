@@ -64,7 +64,19 @@ const NewspressCard = ({ title, date }) => {
               >
                 News and Press Releases
               </Typography>
-              <Typography variant="h5">{title}</Typography>
+              <Typography
+                color="text.secondary"
+                style={{
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                }}
+                variant="h5"
+              >
+                {title}
+              </Typography>
             </CardContent>
             <CardActions>
               <Button size="small" color="primary" variant="contained">
