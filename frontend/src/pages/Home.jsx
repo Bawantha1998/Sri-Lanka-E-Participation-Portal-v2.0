@@ -1,6 +1,6 @@
-
 import React from "react";
 import ControllCarousels from "../components/carousel/ControlCarousel";
+import { Typography } from "@mui/material";
 
 const Home = () => {
   return (
@@ -8,15 +8,14 @@ const Home = () => {
       <br /> <br />
       <ControllCarousels />
       <p />
-      <div>
-        <h1>Public Consultation</h1>
-      </div>
+      
+      <Typography variant="h6" color="primary">
+        Public Consultation
+      </Typography>
       <div>
         <ul>
-          
-          <li >Open</li>
+          <li>Open</li>
           <li>Closed</li>
-
         </ul>
       </div>
     </>

@@ -39,9 +39,9 @@
 
 import React, { useState, useEffect } from "react";
 import { Grid, Paper } from "@mui/material";
-import image1 from "../../images/abc.jpg";
-import image2 from "../../images/temppic1.jpg";
-import image3 from "../../images/temppic3.jpg";
+import image1 from "../../images/epp.jpg";
+import image2 from "../../images/epp2.jpg";
+import image3 from "../../images/epp.jpg";
 
 export default function Home() {
   const images = [image1, image2, image3];
