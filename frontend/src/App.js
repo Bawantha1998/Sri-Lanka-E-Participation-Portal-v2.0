@@ -14,7 +14,7 @@ import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import Termofuse from "./pages/Termofuse";
 import Newsletter from "./pages/Newsletter";
-import Comment from "./components/Comment/Comment"
+import Comment from "./components/Comment/Comment";
 import PublicConsultationsView from "./components/publicConsultations/PublicConsultationView";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/photogallery" element={<Photogallery />} />
         <Route
           path="/news-and-press-releases/latest-news"
@@ -37,9 +37,11 @@ function App() {
         <Route path="/termofuse" element={<Termofuse />} />
         <Route path="/genaral-feedback" element={<GenaralFeedback />} />
         <Route path="/faqs" element={<FAQs />} />
-        <Route path="/newsletter" element={<Newsletter/>}/>
-        <Route path="/public-consultationsview" element={< PublicConsultationsView/>} />
-
+        <Route path="/newsletter" element={<Newsletter />} />
+        <Route
+          path="/public-consultationsview"
+          element={<PublicConsultationsView />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

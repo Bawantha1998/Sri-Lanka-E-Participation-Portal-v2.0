@@ -37,7 +37,7 @@ export default function PublicConsultationsCard({
       />
       <CardMedia
         component="img"
-        maxWidth="auto"
+        maxWidth="160px"
         height="90px"
         src={`${API_IMG_URL}/${image}`} // Accessing image from props
         alt={title}

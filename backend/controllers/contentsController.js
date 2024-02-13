@@ -2,7 +2,7 @@ const db = require("../database/connection");
 
 const getContents = (req, res) => {
   const q =
-    "SELECT * FROM tbl_content WHERE content_status = 100 ORDER BY content_id DESC LIMIT 3"; //
+    "SELECT * FROM tbl_content WHERE content_status = 100 ORDER BY content_id DESC LIMIT 4"; //
   db.query(q, (err, data) => {
     if (err) {
       console.log(err);
@@ -68,4 +68,4 @@ exports.getContents = getContents;
 exports.getContentsBySlug = getContentsBySlug;
 exports.getContentviews = getContentviews;
 exports.getCarousel = getCarousel;
-exports.getnotContentviews=getnotContentviews;
+exports.getnotContentviews = getnotContentviews;
