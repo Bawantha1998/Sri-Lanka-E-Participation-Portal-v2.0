@@ -1,22 +1,163 @@
 import React from "react";
 import ControllCarousels from "../components/carousel/ControlCarousel";
 import { Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 
 const Home = () => {
   return (
     <>
-      <br /> <br />
       <ControllCarousels />
       <p />
-      
-      <Typography variant="h6" color="primary">
-        Public Consultation
-      </Typography>
       <div>
-        <ul>
-          <li>Open</li>
-          <li>Closed</li>
-        </ul>
+        <Grid container>
+          <Grid xs={8}>
+            {/* Medium size */}
+            <Typography
+              variant="h6"
+              style={{
+                textDecoration: "none",
+                margin: "0",
+                padding: "0",
+                fontFamily: "Arial, sans-serif",
+                fontWeight: "bold",
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+                color: "#1e88e5",
+                transition: "color 0.3s ease",
+              }}
+              sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+            >
+              <a
+                style={{
+                  textDecoration: "none",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "0.5rem",
+                  background: "#f0f0f0",
+                  boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+                  transition: "background 0.3s ease",
+                  display: "block",
+                  color: "#1e88e5",
+                  textDecoration: "underline",
+                }}
+                href="##"
+                onMouseOver={(e) => {
+                  e.target.style.background = "#ddd";
+                  e.target.parentNode.style.color = "#007bff";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.background = "#f0f0f0";
+                  e.target.parentNode.style.color = "#1e88e5";
+                }}
+              >
+                PUBLIC CONSULTATION
+              </a>
+            </Typography>
+
+            {/* extra small size */}
+            <Typography
+              variant="h6"
+              style={{
+                textDecoration: "none",
+                margin: "0",
+                padding: "0",
+                fontFamily: "Arial, sans-serif",
+                fontWeight: "bold",
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+                color: "#1e88e5",
+                transition: "color 0.3s ease",
+                fontSize: "10px",
+              }}
+              sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            >
+              <a
+                style={{
+                  textDecoration: "none",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "0.5rem",
+                  background: "#f0f0f0",
+                  boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+                  transition: "background 0.3s ease",
+                  display: "block",
+                  color: "#1e88e5",
+                  textDecoration: "underline",
+                }}
+                href="##"
+                onMouseOver={(e) => {
+                  e.target.style.background = "#ddd";
+                  e.target.parentNode.style.color = "#007bff";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.background = "#f0f0f0";
+                  e.target.parentNode.style.color = "#1e88e5";
+                }}
+              >
+                PUBLIC CONSULTATION
+              </a>
+            </Typography>
+          </Grid>
+
+          <Grid xs={4}>
+            <Typography variant="h7" color="primary">
+              <ul
+                style={{
+                  display: "flex",
+                  gap: "0.3rem",
+                  justifyContent: "end",
+                  listStyleType: "none",
+                  padding: "0",
+                  margin: "0",
+                }}
+              >
+                <li>
+                  <a
+                    style={{
+                      color: "#1e88e5",
+                      textDecoration: "none",
+                      padding: "0.5rem 1rem",
+                      borderRadius: "0.5rem",
+                      background: "#f0f0f0",
+                      boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+                      transition: "background 0.3s ease",
+                    }}
+                    href="##"
+                    onMouseOver={(e) => {
+                      e.target.style.background = "#ddd";
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.background = "#f0f0f0";
+                    }}
+                  >
+                    Ongoing
+                  </a>
+                </li>
+                <li>|</li>
+                <li>
+                  <a
+                    style={{
+                      color: "red",
+                      textDecoration: "none",
+                      padding: "0.5rem 1rem",
+                      borderRadius: "0.5rem",
+                      background: "#f0f0f0",
+                      boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+                      transition: "background 0.3s ease",
+                    }}
+                    href="##"
+                    onMouseOver={(e) => {
+                      e.target.style.background = "#ddd";
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.background = "#f0f0f0";
+                    }}
+                  >
+                    Closed
+                  </a>
+                </li>
+              </ul>
+            </Typography>
+          </Grid>
+        </Grid>
       </div>
     </>
   );
