@@ -37,7 +37,7 @@ export default function PublicConsultationbreadcrumb() {
   ];
 
   return (
-    <Box sx={{ bgcolor: "#345AE3", width: "100%", height: "auto" }}>
+    <Box sx={{ bgcolor: "#0178ba", width: "100%", height: "auto" }}>
       <Box marginLeft={3.5} marginTop={2}>
         <Stack spacing={2}>
           <Box>
@@ -59,7 +59,7 @@ export default function PublicConsultationbreadcrumb() {
                 color="#FFFFFF"
                 fontSize={{ xs: 30, md: 50 }}
               >
-                 FeedBack
+                FeedBack
               </Typography>
             </Box>
           </Box>
