@@ -12,6 +12,8 @@ import FAQs from "./pages/FAQs";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
+import Comment from "./components/Comment/Comment"
+import PublicConsultationsView from "./components/publicConsultations/PublicConsultationView";
 
 
 function App() {
@@ -27,8 +29,10 @@ function App() {
         <Route path="/Allimages" element={<Allimagegallery />} />
         <Route path="/feedback" element={<FeedBack />} />
         <Route path="/contact-us" element={<ContactUs />} />
+
         <Route path="/genaral-feedback" element={<GenaralFeedback />} />
         <Route path="/faqs" element={<FAQs />} />
+        <Route path="/public-consultationsview" element={< PublicConsultationsView/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
