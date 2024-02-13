@@ -3,18 +3,21 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NewspressCard from "../components/newspress/NewspressCard";
 import Newspressbreadcrumb from "../components/newspress/Newspressbreadcrumb";
-
-// const noOfCards = [1, 2, 3, 4, 5, 6];
+import { API_BASE_URL } from "../utils/constants";
 
 export default function Newspress() {
   const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
-    // Fetch data from your backend API using Axios
-    axios
-      .get("http://localhost:3001/api/newspress")
-      .then((response) => setNewsData(response.data))
-      .catch((error) => console.error("Error fetching data:", error));
+    const fetchAllContents = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/getRssData`);
+        setNewsData(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchAllContents();
   }, []);
   return (
     <div>
