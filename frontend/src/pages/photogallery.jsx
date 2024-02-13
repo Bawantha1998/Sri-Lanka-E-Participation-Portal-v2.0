@@ -1,21 +1,45 @@
-import React from 'react'
-import Grid from '@mui/material/Grid'; 
-import Typography from "@mui/material/Typography";
-import { Container } from '@mui/material';
+
+import React, { useState, useEffect } from "react";
+import { Box, Grid } from "@mui/material";
+import axios from "axios";
+
 import Gallerybreadcrumb from '../components/gallery/gallerybreadcrumb';
 import Gallerycard from '../components/gallery/gallerycard';
 // import Gallerycard2 from '../gallery/gallerycard2';
 export default function Photogallery() {
+
+  const [galleryData, setgalleryData] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from your backend API using Axios
+    axios
+      .get("http://localhost:3001/api/gallerycard")
+      .then((response) => setgalleryData(response.data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  
   return (
     <div>
-    {/* <Container> */}
+   
     <Grid container spacing={2}>
       <Grid container item sm={12} md={12}>
         <Gallerybreadcrumb/>
       </Grid>
      
-      <Gallerycard/>
-      </Grid>
+      {galleryData.map((data, index) => (
+          <Grid item key={index} lg={4} md={4} sm={6} xs={12}>
+            <Box marginLeft={1} marginTop={1} marginRight={1.5}>
+              <Gallerycard
+                Name={data.Name}
+                date={data.date}
+                image={data.image}
+                short_description={data.short_description}
+              />
+            </Box>
+          </Grid>
+         ))}
+    </Grid>
      
       
     

@@ -6,7 +6,7 @@ import {
   MenuList,
   MenuItem,
 } from "@mui/material";
-import React, { useState, MouseEvent } from "react";
+import React, { useState } from "react";
 import { AppBar, IconButton, Toolbar } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import SearchIcon from "@mui/icons-material/Search";
@@ -75,44 +75,6 @@ function Navbar() {
 
   return (
     <div>
-      {/* <AppBar  sx={{ boxShadow: "none",width:"100%" }} >
-        <Toolbar
-          style={{ minHeight: 25, color: "#575050" }}
-          sx={{ 
-            bgcolor: "#bdbdbd",
-          }}
-        >
-          <Typography
-            style={{ marginLeft: "25px" }}
-            sx={{
-              fontSize: {
-                xs:'11px',
-                sm:'12px',
-                md:'14px',
-                xl:'15.5px'
-
-              },
-              display: { xs: "flex", md: "flex", sm: "flex" },
-              gap: 0.5,
-           
-            }}
-          >
-            <img
-            sx={{ display: { xs: "flex", md: "flex", sm: "flex" }}}
-              src={logo2}
-              alt="Logo"
-              style={{ width: "16px", height: "16px" }}
-            />
-            <b  style={{display:"flex",marginTop:"1%"}} >
-              An Official Website of Sri Lanka Government {""}
-              <span style={{ color: "#1e88e5", textDecoration: "underline" }}>
-                {" "} */}
-      {/* </span>
-            </b>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <br /> */}
       <AppBar
         position="fixed"
         style={{ color: "#1e88e5" }}
@@ -143,13 +105,12 @@ function Navbar() {
                 width: "100%",
                 border: "none", // Remove border style
                 boxShadow: "none",
-                 // Remove box shadow
-                 }}
-
+                // Remove box shadow
+              }}
             >
               <AccordionSummary
                 sx={{ display: "flex" }}
-                style={{ marginTop: "0"}}
+                style={{ marginTop: "0" }}
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1-content"
                 id="panel1-header"
@@ -169,15 +130,17 @@ function Navbar() {
                 <p>
                   {" "}
                   <b> Official Websites use .gov.lk</b> <br />A .gov.lk website
-                  belongs <br/>to an official government <br/>organization in the Sri
-                  Lanka.
+                  belongs <br />
+                  to an official government <br />
+                  organization in the Sri Lanka.
                 </p>
 
                 <p>
                   <b> Secure .gov.lk websites use HTTPS</b> <br />A lock or
-                  https: // means you've safely<br/> connected to the .gov.lk
-                  website. <br/>Share sensitive information only on <br/>official,secure
-                  websites.
+                  https: // means you've safely
+                  <br /> connected to the .gov.lk website. <br />
+                  Share sensitive information only on <br />
+                  official,secure websites.
                 </p>
               </AccordionDetails>
             </Accordion>
@@ -188,7 +151,7 @@ function Navbar() {
       <br />
 
       <AppBar
-         position=""
+        position=""
         style={{ color: "#1e88e5" }}
         sx={{ bgcolor: "#f5f5f5" }}
       >
@@ -292,9 +255,7 @@ function Navbar() {
           </Search>
         </Toolbar>
       </AppBar>
-      <div>
-        
-      </div>
+      <div></div>
     </div>
   );
 }
