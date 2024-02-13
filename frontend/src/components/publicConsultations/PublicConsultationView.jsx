@@ -5,16 +5,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Parser } from "html-to-react";
 import { useParams } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
-import { SlArrowRight } from "react-icons/sl";
-import { FaFacebook } from "react-icons/fa";
-import { AiFillTwitterCircle } from "react-icons/ai";
-import { ImMail4 } from "react-icons/im";
-import { TfiSharethisAlt } from "react-icons/tfi";
-import { Link } from "react-router-dom";
+
 
 import { API_BASE_URL } from "../../utils/constants";
-import Comment from "../Comment/Comment"
+// import Comment from "../Comment/Comment"
 
 export default function PublicConsultationView() {
   const { content_id } = useParams();
@@ -31,7 +25,7 @@ export default function PublicConsultationView() {
     const fetchContent = async () => {
       try {
         const res = await axios.get(
-          `${API_BASE_URL}/content/public-consultations/${content_id}`
+          `${API_BASE_URL}/consultations/public-consultations/${content_id}`
         );
         console.log(content_id);
         setContent(res.data);
@@ -67,10 +61,10 @@ export default function PublicConsultationView() {
           marginTop={2}
           borderRadius={5}
         >
-          <p >
+      <Typography>
                   {new Parser().parse(content.content_description)}
-       </p>
-
+   
+</Typography >
          
           
          
@@ -80,7 +74,7 @@ export default function PublicConsultationView() {
               
             </Box>
           </Grid>
-            <Comment/>
+            {/* <Comment/> */}
         </Grid>
       
       </Grid>
