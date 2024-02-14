@@ -156,19 +156,21 @@ function Navbar() {
         sx={{ bgcolor: "#f5f5f5" }}
       >
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="logo"
-            sx={{ display: { xs: "none", md: "flex" } }}
-          >
-            <img
-              src={logo4}
-              alt="Logo"
-              style={{ width: "auto", height: "45px" }}
-            />
-          </IconButton>
+        <div style={{ marginLeft: 'auto' }}>
+  <IconButton
+    size="large"
+    edge="start"
+    color="inherit"
+    aria-label="logo"
+    sx={{ display: { xs: "none", md: "flex" } }}
+  >
+    <img
+      src={logo4}
+      alt="Logo"
+      style={{ width: "auto", height: "45px" }}
+    />
+  </IconButton>
+</div>
           <Typography
             variant="h6"
             component="div"
