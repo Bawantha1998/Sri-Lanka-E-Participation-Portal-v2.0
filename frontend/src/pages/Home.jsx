@@ -26,14 +26,15 @@ const Home = () => {
   }, []);
   return (
     <>
-    <br/><br/>
-    <p/>
-    <br/>
-    <br/>
-    <br/>
+      <br />
+      <br />
+      <p />
+      <br />
+      <br />
+      <br />
       <ControllCarousels />
       <p />
-      
+
       <div>
         <Grid container>
           <Grid xs={8}>

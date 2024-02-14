@@ -51,6 +51,8 @@ export default function Comment() {
 
     return (
         <div style={{ padding: 10, display: "flex", justifyContent: "right", alignItems: "right", flexDirection: "column" }} className="App">
+            <br/><br/>
+            <br/><br/> <br/>
             <h1>Feedback</h1>
             {/* <Button variant="contained" color="primary" onClick={resetLikes}>Reset Likes</Button> */}
             {[...Array(5)].map((_, num) => (
@@ -61,10 +63,10 @@ export default function Comment() {
                         animate={{ x: 0, opacity: 1 }} 
                         transition={{ delay: num * 0.7 }}
                     >
-                        <Paper style={{ padding: "40px 20px"}}>
+                        {/* <Paper style={{ padding: "40px 20px",backgroundColor:"#bdbdbd"}}> */}
                             <Grid container wrap="nowrap" spacing={2}>
                                 <Grid item>
-                                    <Avatar alt="Remy Sharp" src={imgLink} />
+                                    <Avatar alt="Remy Sharp" src={imgLink} style={{ marginRight: 10 }} />
                                 </Grid>
                                 <Grid justifyContent="left" item xs zeroMinWidth>
                                     <h4 style={{ margin: 0, textAlign: "left" }}>Michel Michel</h4>
@@ -83,7 +85,7 @@ export default function Comment() {
                                         Posted 1 minute ago
                                     </p>
                                     <Box display="flex" alignItems="center">
-                                        <IconButton onClick={() => handleLike(num)}>
+                                        <IconButton onClick={() => handleLike(num)} style={{ marginRight: 10 }}>
                                             <FavoriteIcon style={{ color: "red" }} />
                                         </IconButton>
                                         <span>{likes[num]}</span>
@@ -91,7 +93,6 @@ export default function Comment() {
                                             <Rating
                                                 name={`rating-${num}`}
                                                 value={ratings[num]}
-                                              
                                                 icon={<StarIcon fontSize="inherit" />}
                                                 style={{ color: "#ffc107" }} // Set the color of the stars
                                             />
@@ -99,7 +100,7 @@ export default function Comment() {
                                     </Box>
                                 </Grid>
                             </Grid>
-                        </Paper>
+                        {/* </Paper> */}
                     </motion.div>
                 </Box>
             ))}
