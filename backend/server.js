@@ -12,7 +12,7 @@ app.use(express.static("public"));
 require("dotenv").config({ path: "./.env" });
 const port = process.env.PORT || 5000;
 
-app.use("/content", require("./routes/contentsRoute"));
+app.use("/consultations", require("./routes/contentsRoute"));
 
 app.use("/feedback", require("./routes/feedbackRoute"));
 

@@ -37,11 +37,12 @@ export default function PublicConsultationbreadcrumb() {
   ];
 
   return (
-    <Box sx={{ bgcolor: "#345AE3", width: "100%", height: "auto" }} >
-      <Box marginLeft={3.5} marginTop={2}>
+    <Box sx={{ bgcolor: "#0178ba", width: "100%", height: "auto" }}>
+      <Box marginLeft={3.5}>
         <Stack spacing={2}>
           <Box>
             <Breadcrumbs
+              marginTop={2}
               separator={
                 <NavigateNextIcon
                   fontSize="small"

@@ -11,7 +11,9 @@ export default function PublicConsultations() {
   useEffect(() => {
     const fetchAllContents = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/content/contentviews`);
+        const res = await axios.get(
+          `${API_BASE_URL}/consultations/public-consultations`
+        );
         setCardData(res.data);
       } catch (err) {
         console.log(err);
@@ -34,6 +36,7 @@ export default function PublicConsultations() {
                 subheader={content.subheader} // Assuming you have a subheader field
                 image={content.content_image}
                 description={content.content_short_description} // Assuming content_short_description is the description
+                url={content.content_url}
               />
             </Box>
           </Grid>

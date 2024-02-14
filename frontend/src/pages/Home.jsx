@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ControllCarousels from "../components/carousel/ControlCarousel";
 import { Typography } from "@mui/material";
+import axios from "axios";
 import { Grid } from "@mui/material";
+import { API_BASE_URL } from "../utils/constants";
+import { API_IMG_URL } from "../utils/constants";
+import PublicConsultationsCard from "../components/publicConsultations/PublicConsultationsCard";
+import { Box } from "@mui/system";
 
 const Home = () => {
+  const [cardData, setCardData] = useState([]);
+
+  useEffect(() => {
+    const fetchAllContents = async () => {
+      try {
+        const res = await axios.get(
+          `${API_BASE_URL}/consultations/latest-public-consultations`
+        );
+        setCardData(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchAllContents();
+  }, []);
   return (
     <>
     <br/><br/>
@@ -162,6 +182,20 @@ const Home = () => {
                 </li>
               </ul>
             </Typography>
+          </Grid>
+          <Grid container spacing={2}>
+            {cardData.map((content, index) => (
+              <Grid item key={index} xs={12} sm={6} md={3}>
+                <Box marginTop={1}>
+                  <PublicConsultationsCard
+                    title={content.content_topic}
+                    subheader={content.subheader}
+                    image={content.content_image}
+                    description={content.content_short_description}
+                  />
+                </Box>
+              </Grid>
+            ))}
           </Grid>
         </Grid>
       </div>

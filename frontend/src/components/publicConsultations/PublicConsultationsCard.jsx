@@ -8,11 +8,17 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { API_IMG_URL } from "../../utils/constants";
 
+import { Parser } from "html-to-react";
+
+import { Link } from "react-router-dom";
+
+
 export default function PublicConsultationsCard({
   title,
   subheader,
   image,
   description,
+  url,
 }) {
   const [hovered, setHovered] = React.useState(false);
   return (
@@ -29,14 +35,15 @@ export default function PublicConsultationsCard({
       <CardHeader
         titleTypographyProps={{
           variant: "h6",
-          style: { lineHeight: "1", minHeight: "3em", fontWeight: "bold" },
+          style: { lineHeight: "1", minHeight: "4em", fontWeight: "bold" },
         }}
         title={title}
         subheader={subheader}
       />
       <CardMedia
         component="img"
-        height="194"
+        maxWidth="160px"
+        height="90px"
         src={`${API_IMG_URL}/${image}`} // Accessing image from props
         alt={title}
       />
@@ -52,10 +59,11 @@ export default function PublicConsultationsCard({
             WebkitBoxOrient: "vertical",
           }}
         >
-          {description}
+          {new Parser().parse(description)}
         </Typography>
       </CardContent>
       <CardActions>
+        <Link to={url}>
         <Button
           sx={{
             bgcolor: "#345AE3",
@@ -70,6 +78,7 @@ export default function PublicConsultationsCard({
         >
           View More
         </Button>
+        </Link>
       </CardActions>
     </Card>
   );
