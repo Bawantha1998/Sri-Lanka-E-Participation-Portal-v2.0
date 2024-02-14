@@ -13,16 +13,10 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import Termofuse from "./pages/Termofuse";
-
 import Newsletter from "./pages/Newsletter";
-
 import PublicConsultationsView from "./components/publicConsultations/PublicConsultationView";
-
-
 import Comment from "./components/Comment/Comment"
 import PublicConsultationView from "./components/publicConsultations/PublicConsultationView";
-
-
 function App() {
   return (
     <BrowserRouter>
@@ -49,15 +43,11 @@ function App() {
           path="/public-consultationsview"
           element={<PublicConsultationsView />}
         />
-
         <Route path="/newsletter" element={<Newsletter/>}/>
         <Route path="/consultations/public-consultations/:content_id" element={<PublicConsultationView/>}/>
-
-
       </Routes>
       <Footer />
     </BrowserRouter>
   );
 }
-
 export default App;
