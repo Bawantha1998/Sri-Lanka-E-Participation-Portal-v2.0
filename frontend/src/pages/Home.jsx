@@ -193,6 +193,7 @@ const Home = () => {
                     subheader={content.subheader}
                     image={content.content_image}
                     description={content.content_short_description}
+                    url={`/consultations/public-consultations/${content.content_url}`}
                   />
                 </Box>
               </Grid>

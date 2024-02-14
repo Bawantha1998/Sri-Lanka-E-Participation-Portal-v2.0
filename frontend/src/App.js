@@ -31,7 +31,7 @@ function App() {
         <Route path="/consultations/public-consultations" element={<PublicConsultations />} />
         <Route path="/consultations/event" element={<Event />} />
         <Route path="/Allphotogallery" element={<Allimagegallery />} />
-        <Route path="/feedback" element={<FeedBack />} />
+        <Route path="/Addfeedback/:content_id" element={<FeedBack/>} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/useful-links" element={<UsefulLinks />} />
         <Route path="/termofuse" element={<Termofuse />} />
