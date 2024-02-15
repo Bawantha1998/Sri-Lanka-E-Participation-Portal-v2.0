@@ -32,7 +32,7 @@ export default function PublicConsultationbreadcrumb() {
       Participate
     </Link>,
     <Typography key="3" color="#FFFFFF">
-      FeedBack
+      Feedback
     </Typography>,
   ];
 
@@ -59,7 +59,7 @@ export default function PublicConsultationbreadcrumb() {
                 color="#FFFFFF"
                 fontSize={{ xs: 30, md: 50 }}
               >
-                FeedBack
+                Feedback
               </Typography>
             </Box>
           </Box>
