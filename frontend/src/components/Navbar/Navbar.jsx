@@ -20,6 +20,14 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 
+import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from "@mui/icons-material/Home";
+import GroupIcon from "@mui/icons-material/Group";
+import ArticleIcon from "@mui/icons-material/Article";
+import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
+import InfoIcon from "@mui/icons-material/Info";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -75,103 +83,102 @@ function Navbar() {
 
   return (
     <div>
-    
-      {/* <br /> */}
-      {/* <br /> */}
+   
 
       <AppBar
         position="fixed"
         style={{ color: "#1e88e5" }}
         sx={{ bgcolor: "#f5f5f5" }}
       >
-          <AppBar
-        position="sticky"
-        style={{ color: "#1e88e5" }}
-        sx={{ boxShadow: "none", bgcolor: "#f5f5f5" }}
-      >
-        <Toolbar
-          style={{ minHeight: 25, color: "#575050" }}
-          sx={{
-            bgcolor: "#bdbdbd",
-          }}
+        <AppBar
+          position="sticky"
+          style={{ color: "#1e88e5" }}
+          sx={{ boxShadow: "none", bgcolor: "#f5f5f5" }}
         >
-          <Typography
-            style={{ marginLeft: "25px" }}
+          <Toolbar
+            style={{ minHeight: 25, color: "#575050" }}
             sx={{
-              fontSize: {
-                xs: "10px",
-                sm: "11px",
-                md: "12px",
-                xl: "13.5px",
-              },
-              display: { xs: "flex", md: "flex", sm: "flex" },
-              gap: 0.5,
+              bgcolor: "#bdbdbd",
             }}
           >
-            <Accordion
+            <Typography
+              style={{ marginLeft: "25px" }}
               sx={{
-                bgcolor: "#bdbdbd",
-                width: "100%",
-                border: "none", // Remove border style
-                boxShadow: "none",
-                // Remove box shadow
+                fontSize: {
+                  xs: "10px",
+                  sm: "11px",
+                  md: "12px",
+                  xl: "13.5px",
+                },
+                display: { xs: "flex", md: "flex", sm: "flex" },
+                gap: 0.5,
               }}
             >
-              <AccordionSummary
-                sx={{ display: "flex" }}
-                style={{ marginTop: "0" }}
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
+              <Accordion
+                sx={{
+                  bgcolor: "#bdbdbd",
+                  width: "100%",
+                  border: "none", // Remove border style
+                  boxShadow: "none",
+                  // Remove box shadow
+                }}
               >
-                <img
-                  sx={{ display: { xs: "flex", md: "flex", sm: "flex" } }}
-                  src={logo2}
-                  alt="Logo"
-                  style={{ width: "16px", height: "16px" }}
-                />
-                An Official Website of Sri Lanka Government Here’s how you know
-              </AccordionSummary>
-              <AccordionDetails
-                style={{ width: "auto" }}
-                sx={{ display: "flex", gap: "2rem" }}
-              >
-                <p>
-                  {" "}
-                  <b> Official Websites use .gov.lk</b> <br />A .gov.lk website
-                  belongs <br />
-                  to an official government <br />
-                  organization in the Sri Lanka.
-                </p>
+                <AccordionSummary
+                  sx={{ display: "flex" }}
+                  style={{ marginTop: "0" }}
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                >
+                  <img
+                    sx={{ display: { xs: "flex", md: "flex", sm: "flex" } }}
+                    src={logo2}
+                    alt="Logo"
+                    style={{ width: "16px", height: "16px" }}
+                  />
+                  An Official Website of Sri Lanka Government Here’s how you
+                  know
+                </AccordionSummary>
+                <AccordionDetails
+                  style={{ width: "auto" }}
+                  sx={{ display: "flex", gap: "2rem" }}
+                >
+                  <p>
+                    {" "}
+                    <b> Official Websites use .gov.lk</b> <br />A .gov.lk
+                    website belongs <br />
+                    to an official government <br />
+                    organization in the Sri Lanka.
+                  </p>
 
-                <p>
-                  <b> Secure .gov.lk websites use HTTPS</b> <br />A lock or
-                  https: // means you've safely
-                  <br /> connected to the .gov.lk website. <br />
-                  Share sensitive information only on <br />
-                  official,secure websites.
-                </p>
-              </AccordionDetails>
-            </Accordion>
-          </Typography>
-        </Toolbar>
-      </AppBar>
+                  <p>
+                    <b> Secure .gov.lk websites use HTTPS</b> <br />A lock or
+                    https: // means you've safely
+                    <br /> connected to the .gov.lk website. <br />
+                    Share sensitive information only on <br />
+                    official,secure websites.
+                  </p>
+                </AccordionDetails>
+              </Accordion>
+            </Typography>
+          </Toolbar>
+        </AppBar>
         <Toolbar>
-        <div style={{ marginLeft: 'auto' }}>
-  <IconButton
-    size="large"
-    edge="start"
-    color="inherit"
-    aria-label="logo"
-    sx={{ display: { xs: "none", md: "flex" } }}
-  >
-    <img
-      src={logo4}
-      alt="Logo"
-      style={{ width: "auto", height: "45px" }}
-    />
-  </IconButton>
-</div>
+          <div style={{ marginLeft: "auto" }}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="logo"
+              sx={{ display: { xs: "none", md: "flex" } }}
+            >
+              <img
+                src={logo4}
+                alt="Logo"
+                style={{ width: "auto", height: "45px" }}
+              />
+            </IconButton>
+          </div>
           <Typography
             variant="h6"
             component="div"
@@ -208,17 +215,43 @@ function Navbar() {
               onClick={closeMenu}
               sx={{ display: { xs: "flex", md: "none" } }}
             >
-              <MenuList
+              {/* <MenuList
                 style={{ color: "#1e88e5", width: "1000px" }}
                 sx={{ textTransform: "uppercase", bgcolor: "f5f5f5" }}
               >
-                <MenuItem> Home</MenuItem>
-                <MenuItem> Participate</MenuItem>
-                <MenuItem> Read</MenuItem>
-                <MenuItem> Photo Gallery</MenuItem>
-                <MenuItem> Who We are</MenuItem>
-                <MenuItem> Contact us</MenuItem>
-              </MenuList>
+                <MenuItem> <HomeIcon fontSize="small"/>Home</MenuItem>
+                <MenuItem>  <GroupIcon fontSize="small" />Participate</MenuItem>
+                <MenuItem>  <ArticleIcon fontSize="small" />Read</MenuItem>
+                <MenuItem> <PhotoLibraryIcon fontSize="small" /> Photo Gallery</MenuItem>
+                <MenuItem>    <InfoIcon fontSize="small" />Who We are</MenuItem>
+                <MenuItem>  <ContactMailIcon fontSize="small" /> Contact us</MenuItem>
+              </MenuList> */}
+              <MenuList sx={{ color: "#1e88e5", width: "1000px", textTransform: "uppercase", bgcolor: "f5f5f5" }}>
+            <MenuItem sx={{ display: "flex", gap: 1 }}>
+              <HomeIcon fontSize="small" />
+              Home
+            </MenuItem>
+            <MenuItem sx={{ display: "flex", gap: 1 }}>
+              <GroupIcon fontSize="small" />
+              Participate
+            </MenuItem>
+            <MenuItem sx={{ display: "flex", gap: 1 }}>
+              <ArticleIcon fontSize="small" />
+              Read
+            </MenuItem>
+            <MenuItem sx={{ display: "flex", gap: 1 }}>
+              <PhotoLibraryIcon fontSize="small" />
+              Photo Gallery
+            </MenuItem>
+            <MenuItem sx={{ display: "flex", gap: 1 }}>
+              <InfoIcon fontSize="small" />
+              Who We are
+            </MenuItem>
+            <MenuItem sx={{ display: "flex", gap: 1 }}>
+              <ContactMailIcon fontSize="small" />
+              Contact us
+            </MenuItem>
+          </MenuList>
             </Menu>
           </Box>
 
