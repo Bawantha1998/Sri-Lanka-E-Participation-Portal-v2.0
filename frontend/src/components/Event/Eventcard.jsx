@@ -1,4 +1,4 @@
-import * as React from "react";
+
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -7,10 +7,38 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Imgs from "../../images/abc.jpg";
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+import { API_BASE_URL } from "../../utils/constants";
+
+
 
 export default function EventCard() {
-  const handleExpandClick = () => {};
+  const [events, setevents] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const cardsPerPage = 9; // Number of cards to display per page
+
+  useEffect(() => {
+    const fetchAllevents = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/event/events`);
+        setevents(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchAllevents();
+  }, []);
+
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = events.slice(indexOfFirstCard, indexOfLastCard);
+
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value);
+  };
 
   return (
     <Card sx={{ maxWidth: 350 }}>
@@ -22,15 +50,9 @@ export default function EventCard() {
         }
         subheader="September 14, 2016"
       />
-      <CardMedia component="img" height="194" image={Imgs} alt="Paella dish" />
+      <CardMedia component="img" height="194" image={`${API_IMG_URL}/${event.event_image}`} alt="Paella dish" />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          Guidelines for Digital Signatures" is a key milestone in ICTA policy
-          roadmap, which is already being approved and recognized by the
-          government for implementation. The guidelines aim to direct the
-          government staff towards the adoption of a digital signature to
-          authenticate official documents. The effective usage of digital..
-        </Typography>
+    
       </CardContent>
       <CardActions>
         <Button
