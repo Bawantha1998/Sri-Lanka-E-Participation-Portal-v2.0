@@ -87,7 +87,7 @@ function Navbar() {
               <ListItemIcon>
                 <ContactMailIcon fontSize="small" />
               </ListItemIcon>
-              <ListItemText primary="Contact Us" />
+              <ListItemText  primary="Contact Us" />
             </MenuItem>
           </Menu>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
