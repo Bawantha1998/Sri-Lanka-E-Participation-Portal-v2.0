@@ -88,7 +88,7 @@ export default function Comment() {
                         animate={{ x: 0, opacity: 1 }} 
                         transition={{ delay: i * 0.7 }}
                     >
-                        <Paper style={{ padding: "40px 20px"}}>
+                        {/* <Paper style={{ padding: "40px 20px"}}> */}
                             <Grid container wrap="nowrap" spacing={2}>
                                 <Grid item>
                                     <Avatar alt="Remy Sharp" src={imgLink} />
@@ -118,7 +118,7 @@ export default function Comment() {
                                     </Box>
                                 </Grid>
                             </Grid>
-                        </Paper> 
+                        {/* </Paper>  */}
                     </motion.div>
                 </Box>
             ))}

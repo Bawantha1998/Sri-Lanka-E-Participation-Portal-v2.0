@@ -33,7 +33,7 @@ const Home = () => {
       <br />
       <br />
       <ControllCarousels />
-      <p />
+      <p/>
 
       <div>
         <Grid container>
@@ -78,7 +78,11 @@ const Home = () => {
               >
                 PUBLIC CONSULTATION
               </a>
+         
             </Typography>
+            <br />
+            <p/>
+           
 
             {/* extra small size */}
             <Typography
@@ -122,6 +126,7 @@ const Home = () => {
                 PUBLIC CONSULTATION
               </a>
             </Typography>
+           <br />
           </Grid>
 
           <Grid xs={4}>
@@ -184,10 +189,10 @@ const Home = () => {
               </ul>
             </Typography>
           </Grid>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} justifyContent="center">
             {cardData.map((content, index) => (
               <Grid item key={index} xs={12} sm={6} md={3}>
-                <Box marginTop={1}>
+                <Box marginTop={1} >
                   <PublicConsultationsCard
                     title={content.content_topic}
                     subheader={content.subheader}

@@ -16,6 +16,8 @@ export default function PublicConsultations() {
         );
         setCardData(res.data);
       } catch (err) {
+
+        
         console.log(err);
       }
     };
