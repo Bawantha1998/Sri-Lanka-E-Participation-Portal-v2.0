@@ -4,20 +4,11 @@ import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import { motion } from "framer-motion";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { API_IMG_URL } from "../../utils/constants";
-
 import { Parser } from "html-to-react";
-
 import { Link } from "react-router-dom";
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 export default function PublicConsultationsCard({
   title,
   subheader,
@@ -47,8 +38,8 @@ export default function PublicConsultationsCard({
       />
       <CardMedia
         component="img"
-        maxWidth="160px"
-        height="90px"
+        maxWidth="345px"
+        height="194px"
         src={`${API_IMG_URL}/${image}`} // Accessing image from props
         alt={title}
       />
@@ -76,7 +67,7 @@ export default function PublicConsultationsCard({
               fontSize: 13,
               fontWeight: "",
               "&:hover": {
-                bgcolor: "#2a487e",
+                bgcolor: "#2A487E",
               },
             }}
             size="small"
