@@ -7,12 +7,8 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { API_IMG_URL } from "../../utils/constants";
-
 import { Parser } from "html-to-react";
-
 import { Link } from "react-router-dom";
-
-
 export default function PublicConsultationsCard({
   title,
   subheader,
@@ -64,20 +60,20 @@ export default function PublicConsultationsCard({
       </CardContent>
       <CardActions>
         <Link to={url}>
-        <Button
-          sx={{
-            bgcolor: "#345AE3",
-            color: "#FFFFFF",
-            fontSize: 13,
-            fontWeight: "",
-            "&:hover": {
-              bgcolor: "#2a487e",
-            },
-          }}
-          size="small"
-        >
-          View More
-        </Button>
+          <Button
+            sx={{
+              bgcolor: "#345AE3",
+              color: "#FFFFFF",
+              fontSize: 13,
+              fontWeight: "",
+              "&:hover": {
+                bgcolor: "#2A487E",
+              },
+            }}
+            size="small"
+          >
+            View More
+          </Button>
         </Link>
       </CardActions>
     </Card>
