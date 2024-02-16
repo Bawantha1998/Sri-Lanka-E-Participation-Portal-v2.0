@@ -1,13 +1,40 @@
 import React, { useState, useEffect } from "react";
-import { Divider, Avatar, Grid, Paper, IconButton, Box, Button } from "@material-ui/core";
+import {  Avatar, Grid, Paper, IconButton, Box } from "@material-ui/core";
 import { Favorite as FavoriteIcon, Star as StarIcon } from "@material-ui/icons";
 import Rating from "@material-ui/lab/Rating";
 import { motion } from "framer-motion";
-
+import { API_BASE_URL } from "../../utils/constants";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import moment from "moment";
 const imgLink =
-  "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260";
+  "";
 
+    // Add more properties if your data structure contains them
+ 
 export default function Comment() {
+    const [feedback, setFeedback] = useState({
+        first_name: "",
+        feedback: "",
+        ctime: "",
+        content_id: "",
+      });
+    const { content_id } = useParams();
+    
+
+
+    
+    useEffect(() => {
+        axios
+          .get(`${API_BASE_URL}/feedback/${content_id}`)
+          .then((response) => {
+            setFeedback(response.data);
+          })
+          .catch((error) => {
+            console.error("Error--->>", error);
+          });
+      }, [content_id]);
+
     const [likes, setLikes] = useState(() => {
         const storedLikes = JSON.parse(localStorage.getItem('commentLikes')) || new Array(5).fill(0);
         return storedLikes;
@@ -22,7 +49,7 @@ export default function Comment() {
         localStorage.setItem('commentRatings', JSON.stringify(ratings));
     }, [likes, ratings]);
 
-    const handleLike = (num) => {
+    const handleLikee = (num) => {
         const updatedLikes = [...likes];
         updatedLikes[num]++;
         setLikes(updatedLikes);
@@ -50,47 +77,39 @@ export default function Comment() {
     };
 
     return (
-        <div style={{ padding: 10, display: "flex", justifyContent: "right", alignItems: "right", flexDirection: "column" }} className="App">
+        <div style={{ padding: 10, display: "flex", justifyContent: "right", alignItems: "right", flexDirection: "column" }}>
             <h1>Feedback</h1>
             {/* <Button variant="contained" color="primary" onClick={resetLikes}>Reset Likes</Button> */}
-            {[...Array(5)].map((_, num) => (
-                <Box key={num} width="100%" my={2}>
+            {Array.isArray(feedback) && feedback.map((data, i) => (
+                <Box key={i} width="100%" my={2}>
                     <motion.div 
-                        key={num} 
+                        key={i} 
                         initial={{ x: -200, opacity: 0 }} 
                         animate={{ x: 0, opacity: 1 }} 
-                        transition={{ delay: num * 0.7 }}
+                        transition={{ delay: i * 0.7 }}
                     >
-                        <Paper style={{ padding: "40px 20px"}}>
+                        {/* <Paper style={{ padding: "40px 20px"}}> */}
                             <Grid container wrap="nowrap" spacing={2}>
                                 <Grid item>
                                     <Avatar alt="Remy Sharp" src={imgLink} />
                                 </Grid>
                                 <Grid justifyContent="left" item xs zeroMinWidth>
-                                    <h4 style={{ margin: 0, textAlign: "left" }}>Michel Michel</h4>
+                                    <h4 style={{ margin: 0, textAlign: "left" }}> {data.first_name}</h4>
                                     <p style={{ textAlign: "left" }}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                                        luctus ut est sed faucibus. Duis bibendum ac ex vehicula laoreet.
-                                        Suspendisse congue vulputate lobortis. Pellentesque at interdum
-                                        tortor. Quisque arcu quam, malesuada vel mauris et, posuere
-                                        sagittis ipsum. Aliquam ultricies a ligula nec faucibus. In elit
-                                        metus, efficitur lobortis nisi quis, molestie porttitor metus.
-                                        Pellentesque et neque risus. Aliquam vulputate, mauris vitae
-                                        tincidunt interdum, mauris mi vehicula urna, nec feugiat quam
-                                        lectus vitae ex.
+                                    {data.feedback}
                                     </p>
                                     <p style={{ textAlign: "left", color: "gray" }}>
-                                        Posted 1 minute ago
+                                    {moment(data.ctime).format("YYYY-MM-DD")}
                                     </p>
                                     <Box display="flex" alignItems="center">
-                                        <IconButton onClick={() => handleLike(num)}>
-                                            <FavoriteIcon style={{ color: "red" }} />
-                                        </IconButton>
-                                        <span>{likes[num]}</span>
+                                  
+                                            <FavoriteIcon  onClick={() => handleLikee(i)} style={{ color: "blue" }} />
+                                     
+                                        <span>{likes[i]}</span>
                                         <Box ml={2}>
                                             <Rating
-                                                name={`rating-${num}`}
-                                                value={ratings[num]}
+                                                name={`rating-${i}`}
+                                                value={ratings[i]}
                                               
                                                 icon={<StarIcon fontSize="inherit" />}
                                                 style={{ color: "#ffc107" }} // Set the color of the stars
@@ -99,7 +118,7 @@ export default function Comment() {
                                     </Box>
                                 </Grid>
                             </Grid>
-                        </Paper>
+                        {/* </Paper>  */}
                     </motion.div>
                 </Box>
             ))}

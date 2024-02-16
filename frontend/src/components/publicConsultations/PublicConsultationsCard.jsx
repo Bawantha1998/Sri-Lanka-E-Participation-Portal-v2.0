@@ -27,66 +27,64 @@ export default function PublicConsultationsCard({
 }) {
   const [hovered, setHovered] = React.useState(false);
   return (
-    <motion.div initial="hidden" animate="visible" variants={cardVariants}>
-      <Card
-        sx={{
-          maxWidth: 350,
-          "&:hover": {
-            bgcolor: hovered ? "#D3D3D3" : "#",
-          },
+    <Card
+      sx={{
+        maxWidth: 350,
+        "&:hover": {
+          bgcolor: hovered ? "#D3D3D3" : "#",
+        },
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <CardHeader
+        titleTypographyProps={{
+          variant: "h6",
+          style: { lineHeight: "1", minHeight: "4em", fontWeight: "bold" },
         }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        <CardHeader
-          titleTypographyProps={{
-            variant: "h6",
-            style: { lineHeight: "1", minHeight: "4em", fontWeight: "bold" },
+        title={title}
+        subheader={subheader}
+      />
+      <CardMedia
+        component="img"
+        maxWidth="160px"
+        height="90px"
+        src={`${API_IMG_URL}/${image}`} // Accessing image from props
+        alt={title}
+      />
+      <CardContent>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
           }}
-          title={title}
-          subheader={subheader}
-        />
-        <CardMedia
-          component="img"
-          maxWidth="160px"
-          height="90px"
-          src={`${API_IMG_URL}/${image}`} // Accessing image from props
-          alt={title}
-        />
-        <CardContent>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            style={{
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              display: "-webkit-box",
-              WebkitLineClamp: 3,
-              WebkitBoxOrient: "vertical",
+        >
+          {new Parser().parse(description)}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Link to={url}>
+          <Button
+            sx={{
+              bgcolor: "#345AE3",
+              color: "#FFFFFF",
+              fontSize: 13,
+              fontWeight: "",
+              "&:hover": {
+                bgcolor: "#2a487e",
+              },
             }}
+            size="small"
           >
-            {new Parser().parse(description)}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Link to={url}>
-            <Button
-              sx={{
-                bgcolor: "#345AE3",
-                color: "#FFFFFF",
-                fontSize: 13,
-                fontWeight: "",
-                "&:hover": {
-                  bgcolor: "#2a487e",
-                },
-              }}
-              size="small"
-            >
-              View More
-            </Button>
-          </Link>
-        </CardActions>
-      </Card>
-    </motion.div>
+            View More
+          </Button>
+        </Link>
+      </CardActions>
+    </Card>
   );
 }

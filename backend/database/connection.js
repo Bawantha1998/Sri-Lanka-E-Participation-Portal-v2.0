@@ -7,6 +7,14 @@ const db = mysql.createConnection({
   database: "stagepart",
 });
 
+// const db = mysql.createConnection({
+//   host: "127.0.0.1",
+//   user: "root",
+//   port:"3306",
+//   password: "",
+//   database: "eppp",
+// });
+
 // Handle database connection errors
 db.connect((err) => {
   if (err) {
