@@ -1,15 +1,14 @@
 import { Box, Grid, Typography } from "@mui/material";
-import Comment from "../Comment/Comment"
+import Comment from "../Comment/Comment";
 import PublicConsultationbreadcrumb from "./PublicConsultationbreadcrumb";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Parser } from "html-to-react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 import { API_BASE_URL } from "../../utils/constants";
-
 
 export default function PublicConsultationView() {
   const { content_id } = useParams();
@@ -50,10 +49,9 @@ export default function PublicConsultationView() {
   return (
     <div>
       <Grid container spacing={2}>
-        <Grid container item sm={12} md={12}>
-        <PublicConsultationbreadcrumb/>
+        <Grid container item sm={12} md={12} style={{ marginTop: "110px" }}>
+          <PublicConsultationbreadcrumb />
         </Grid>
-
         <Grid
           container
           item
@@ -63,47 +61,37 @@ export default function PublicConsultationView() {
           borderRadius={5}
         >
           <Typography>
-
-          <h1>{content.content_topic}</h1>
+            <h1>{content.content_topic}</h1>
           </Typography>
           <Box>
-      <Typography >
-                  {new Parser().parse(content.content_description)}
-   
-</Typography >
-</Box>
-         
-          
-         
+            <Typography>
+              {new Parser().parse(content.content_description)}
+            </Typography>
+          </Box>
+
           <Grid item xs={12}>
             <Box marginLeft={3} marginTop={2} marginBottom={4}>
-          
-            <Link to={`/Addfeedback/${content.content_url}`}>
-            <Button
-          sx={{
-            bgcolor: "#345AE3",
-            color: "#FFFFFF",
-            fontSize: 13,
-            fontWeight: "",
-            "&:hover": {
-              bgcolor: "#2a487e",
-            },
-          }}
-          size="small"
-        >
-        Give Feedback
-        </Button>
-                </Link>
-               
-              
+              <Link to={`/Addfeedback/${content.content_url}`}>
+                <Button
+                  sx={{
+                    bgcolor: "#345AE3",
+                    color: "#FFFFFF",
+                    fontSize: 13,
+                    fontWeight: "",
+                    "&:hover": {
+                      bgcolor: "#2a487e",
+                    },
+                  }}
+                  size="small"
+                >
+                  Give Feedback
+                </Button>
+              </Link>
             </Box>
-        
           </Grid>
-            <Comment/>
+          <Comment />
         </Grid>
-      
       </Grid>
     </div>
   );
 }
-
