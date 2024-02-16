@@ -40,8 +40,7 @@ const Footer = () => {
               eParticipation Portal | Government of Sri Lanka
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Lorem ipsum dolor, , illum sequi sapiente, quae ullam voluptatem?
-              Harum, error debitis?
+              +94 112 369 099
             </Typography>
             <IconContainer>
               <FaFacebookSquare size={30} />
@@ -57,11 +56,8 @@ const Footer = () => {
                 Participate
               </Typography>
               <ul>
-                <li>Who We Are</li>
-                <li>Mandate</li>
-                <li>Vision</li>
-                <li>Mission</li>
-                <li>Company Structure</li>
+                <li>Events</li>
+                <li>Public Consultation</li>
               </ul>
             </Grid>
             {/* Other Grid items go here */}
@@ -70,11 +66,10 @@ const Footer = () => {
                 About Us
               </Typography>
               <ul>
-                <li>Who We Are</li>
-                <li>Mandate</li>
-                <li>Vision</li>
-                <li>Mission</li>
-                <li>Company Structure</li>
+                <li>About ConnectSL</li>
+                <li>General Feedback</li>
+                <li>SiteMap</li>
+
               </ul>
             </Grid>
 
@@ -83,11 +78,8 @@ const Footer = () => {
                 User Policies
               </Typography>
               <ul>
-                <li>Who We Are</li>
-                <li>Mandate</li>
-                <li>Vision</li>
-                <li>Mission</li>
-                <li>Company Structure</li>
+                <li>Terms of Use</li>
+                <li>Terms of Participation</li>
               </ul>
             </Grid>
 
@@ -96,11 +88,7 @@ const Footer = () => {
                 For Media
               </Typography>
               <ul>
-                <li>Who We Are</li>
-                <li>Mandate</li>
-                <li>Vision</li>
-                <li>Mission</li>
-                <li>Company Structure</li>
+                <li>News & Press Releases</li>
               </ul>
             </Grid>
           </Grid>

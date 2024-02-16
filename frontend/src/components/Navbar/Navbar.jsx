@@ -75,8 +75,17 @@ function Navbar() {
 
   return (
     <div>
+    
+      {/* <br /> */}
+      {/* <br /> */}
+
       <AppBar
         position="fixed"
+        style={{ color: "#1e88e5" }}
+        sx={{ bgcolor: "#f5f5f5" }}
+      >
+          <AppBar
+        position="sticky"
         style={{ color: "#1e88e5" }}
         sx={{ boxShadow: "none", bgcolor: "#f5f5f5" }}
       >
@@ -147,28 +156,22 @@ function Navbar() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <br />
-      <br />
-
-      <AppBar
-        position=""
-        style={{ color: "#1e88e5" }}
-        sx={{ bgcolor: "#f5f5f5" }}
-      >
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="logo"
-            sx={{ display: { xs: "none", md: "flex" } }}
-          >
-            <img
-              src={logo4}
-              alt="Logo"
-              style={{ width: "auto", height: "45px" }}
-            />
-          </IconButton>
+        <div style={{ marginLeft: 'auto' }}>
+  <IconButton
+    size="large"
+    edge="start"
+    color="inherit"
+    aria-label="logo"
+    sx={{ display: { xs: "none", md: "flex" } }}
+  >
+    <img
+      src={logo4}
+      alt="Logo"
+      style={{ width: "auto", height: "45px" }}
+    />
+  </IconButton>
+</div>
           <Typography
             variant="h6"
             component="div"

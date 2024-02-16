@@ -37,35 +37,43 @@ export default function PublicConsultationbreadcrumb() {
   ];
 
   return (
-    <Box sx={{ bgcolor: "#0178ba", width: "100%", height: "auto" }}>
-      <Box marginLeft={3.5}>
-        <Stack spacing={2}>
-          <Box>
-            <Breadcrumbs
-              marginTop={2}
-              separator={
-                <NavigateNextIcon
-                  fontSize="small"
-                  style={{ color: "#FFFFFF", fontFamily: "" }}
-                />
-              }
-              aria-label="breadcrumb"
-            >
-              {breadcrumbs}
-            </Breadcrumbs>
+    <>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Box sx={{ bgcolor: "#0178ba", width: "100%", height: "auto" }}>
+        <Box marginLeft={3.5}>
+          <Stack spacing={2}>
             <Box>
-              <Typography
-                sx={{ fontWeight: { xs: "normal", md: "bold" } }}
-                key="3"
-                color="#FFFFFF"
-                fontSize={{ xs: 30, md: 50 }}
+              <Breadcrumbs
+                marginTop={2}
+                separator={
+                  <NavigateNextIcon
+                    fontSize="small"
+                    style={{ color: "#FFFFFF", fontFamily: "" }}
+                  />
+                }
+                aria-label="breadcrumb"
               >
-                Public Consultations
-              </Typography>
+                {breadcrumbs}
+              </Breadcrumbs>
+              <Box>
+                <Typography
+                  sx={{ fontWeight: { xs: "normal", md: "bold" } }}
+                  key="3"
+                  color="#FFFFFF"
+                  fontSize={{ xs: 30, md: 50 }}
+                >
+                  Public Consultations
+                </Typography>
+              </Box>
             </Box>
-          </Box>
-        </Stack>
+          </Stack>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
