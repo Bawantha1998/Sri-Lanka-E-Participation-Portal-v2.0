@@ -57,7 +57,6 @@ const Home = () => {
             >
               <a
                 style={{
-                  textDecoration: "none",
                   padding: "0.5rem 1rem",
                   borderRadius: "0.5rem",
                   background: "#f0f0f0",
