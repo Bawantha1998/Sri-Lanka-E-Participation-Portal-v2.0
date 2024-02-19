@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ControllCarousels from "../components/carousel/ControlCarousel";
-import { Typography } from "@mui/material";
 import axios from "axios";
-import { Grid } from "@mui/material";
 import { API_BASE_URL } from "../utils/constants";
-import { API_IMG_URL } from "../utils/constants";
 import PublicConsultationsCard from "../components/publicConsultations/PublicConsultationsCard";
-import { Box } from "@mui/system";
+import { Box, Grid, Typography } from "@mui/material";
 
 const Home = () => {
+  // State for storing card data
   const [cardData, setCardData] = useState([]);
 
+  // Fetch data on component mount
   useEffect(() => {
     const fetchAllContents = async () => {
       try {
@@ -28,15 +27,17 @@ const Home = () => {
     <>
       <br />
       <br />
-      <p />
       <br />
       <br />
       <br />
+      {/* Carousels */}
       <ControllCarousels />
-      <p/>
+      <p />
 
+      {/* Main content */}
       <div>
         <Grid container>
+          {/* Left section */}
           <Grid xs={8}>
             {/* Medium size */}
             <Typography
@@ -78,11 +79,9 @@ const Home = () => {
               >
                 PUBLIC CONSULTATION
               </a>
-         
             </Typography>
             <br />
-            <p/>
-           
+            <p />
 
             {/* extra small size */}
             <Typography
@@ -126,10 +125,12 @@ const Home = () => {
                 PUBLIC CONSULTATION
               </a>
             </Typography>
-           <br />
+            <br />
           </Grid>
 
+          {/* Right section */}
           <Grid xs={4}>
+            {/* Typography for ongoing and closed */}
             <Typography variant="h7" color="primary">
               <ul
                 style={{
@@ -192,7 +193,7 @@ const Home = () => {
           <Grid container spacing={2} justifyContent="center">
             {cardData.map((content, index) => (
               <Grid item key={index} xs={12} sm={6} md={3}>
-                <Box marginTop={1} >
+                <Box marginTop={1}>
                   <PublicConsultationsCard
                     title={content.content_topic}
                     subheader={content.subheader}

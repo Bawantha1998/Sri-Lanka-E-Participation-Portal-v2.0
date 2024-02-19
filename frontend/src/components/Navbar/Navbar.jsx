@@ -19,6 +19,12 @@ import Accordion from "@mui/material/Accordion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
+import HomeIcon from "@mui/icons-material/Home";
+import GroupIcon from "@mui/icons-material/Group";
+import ArticleIcon from "@mui/icons-material/Article";
+import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
+import InfoIcon from "@mui/icons-material/Info";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -73,105 +79,157 @@ function Navbar() {
   };
   // const classes =useStyles()
 
-  return (
-    <div>
-    
-      {/* <br /> */}
-      {/* <br /> */}
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
+  // State and event handlers for the "Participate" button-menu pair
+  const [participateAnchorEl, setParticipateAnchorEl] = useState(null);
+  const [participateOpen, setParticipateOpen] = useState(false);
+
+  const handleParticipateClick = (event) => {
+    setParticipateAnchorEl(event.currentTarget);
+    setParticipateOpen(!participateOpen);
+  };
+
+  const handleParticipateClose = () => {
+    setParticipateAnchorEl(null);
+    setParticipateOpen(false);
+  };
+
+  // State and event handlers for the "Read" button-menu pair
+  const [ReadAnchorEl, setReadAnchorEl] = useState(null);
+  const [ReadOpen, setReadOpen] = useState(false);
+
+  const handleReadClick = (event) => {
+    setReadAnchorEl(event.currentTarget);
+    setReadOpen(!whoWeAreOpen);
+  };
+
+  const handleReadClose = () => {
+    setReadAnchorEl(null);
+    setReadOpen(false);
+  };
+
+  // State and event handlers for the "Who We Are" button-menu pair
+  const [whoWeAreAnchorEl, setWhoWeAreAnchorEl] = useState(null);
+  const [whoWeAreOpen, setWhoWeAreOpen] = useState(false);
+
+  const handleWhoWeAreClick = (event) => {
+    setWhoWeAreAnchorEl(event.currentTarget);
+    setWhoWeAreOpen(!whoWeAreOpen);
+  };
+
+  const handleWhoWeAreClose = () => {
+    setWhoWeAreAnchorEl(null);
+    setWhoWeAreOpen(false);
+  };
+
+  return (
+    <>
       <AppBar
         position="fixed"
         style={{ color: "#1e88e5" }}
         sx={{ bgcolor: "#f5f5f5" }}
       >
-          <AppBar
-        position="sticky"
-        style={{ color: "#1e88e5" }}
-        sx={{ boxShadow: "none", bgcolor: "#f5f5f5" }}
-      >
-        <Toolbar
-          style={{ minHeight: 25, color: "#575050" }}
-          sx={{
-            bgcolor: "#bdbdbd",
-          }}
+        <AppBar
+          position="sticky"
+          style={{ color: "#1e88e5" }}
+          sx={{ boxShadow: "none", bgcolor: "#f5f5f5" }}
         >
-          <Typography
-            style={{ marginLeft: "25px" }}
+          <Toolbar
+            style={{ minHeight: 25, color: "#575050" }}
             sx={{
-              fontSize: {
-                xs: "10px",
-                sm: "11px",
-                md: "12px",
-                xl: "13.5px",
-              },
-              display: { xs: "flex", md: "flex", sm: "flex" },
-              gap: 0.5,
+              bgcolor: "#bdbdbd",
             }}
           >
-            <Accordion
+            <Typography
               sx={{
-                bgcolor: "#bdbdbd",
-                width: "100%",
-                border: "none", // Remove border style
-                boxShadow: "none",
-                // Remove box shadow
+                fontSize: {
+                  xs: "9px",
+                  sm: "11px",
+                  md: "12px",
+                  xl: "13.5px",
+                },
+                marginLeft: {
+                  xs: "38px",
+                  sm: "",
+                  md: "3px",
+                },
+                display: { xs: "flex", md: "flex", sm: "flex" },
+                gap: 0.5,
               }}
             >
-              <AccordionSummary
-                sx={{ display: "flex" }}
-                style={{ marginTop: "0" }}
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
+              <Accordion
+                sx={{
+                  bgcolor: "#bdbdbd",
+                  width: "100%",
+                  border: "none", // Remove border style
+                  boxShadow: "none",
+                  // Remove box shadow
+                }}
               >
-                <img
-                  sx={{ display: { xs: "flex", md: "flex", sm: "flex" } }}
-                  src={logo2}
-                  alt="Logo"
-                  style={{ width: "16px", height: "16px" }}
-                />
-                An Official Website of Sri Lanka Government Here’s how you know
-              </AccordionSummary>
-              <AccordionDetails
-                style={{ width: "auto" }}
-                sx={{ display: "flex", gap: "2rem" }}
-              >
-                <p>
-                  {" "}
-                  <b> Official Websites use .gov.lk</b> <br />A .gov.lk website
-                  belongs <br />
-                  to an official government <br />
-                  organization in the Sri Lanka.
-                </p>
+                <AccordionSummary
+                  sx={{ display: "flex" }}
+                  style={{ marginTop: "0" }}
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                >
+                  <img
+                    sx={{ display: { xs: "flex", md: "flex", sm: "flex" } }}
+                    src={logo2}
+                    alt="Logo"
+                    style={{ width: "16px", height: "16px" }}
+                  />
+                  An Official Website of Sri Lanka Government Here’s how you
+                  know
+                </AccordionSummary>
+                <AccordionDetails
+                  style={{ width: "auto" }}
+                  sx={{ display: "flex", gap: "2rem" }}
+                >
+                  <p>
+                    {" "}
+                    <b> Official Websites use .gov.lk</b> <br />A .gov.lk
+                    website belongs <br />
+                    to an official government <br />
+                    organization in the Sri Lanka.
+                  </p>
 
-                <p>
-                  <b> Secure .gov.lk websites use HTTPS</b> <br />A lock or
-                  https: // means you've safely
-                  <br /> connected to the .gov.lk website. <br />
-                  Share sensitive information only on <br />
-                  official,secure websites.
-                </p>
-              </AccordionDetails>
-            </Accordion>
-          </Typography>
-        </Toolbar>
-      </AppBar>
+                  <p>
+                    <b> Secure .gov.lk websites use HTTPS</b> <br />A lock or
+                    https: // means you've safely
+                    <br /> connected to the .gov.lk website. <br />
+                    Share sensitive information only on <br />
+                    official,secure websites.
+                  </p>
+                </AccordionDetails>
+              </Accordion>
+            </Typography>
+          </Toolbar>
+        </AppBar>
         <Toolbar>
-        <div style={{ marginLeft: 'auto' }}>
-  <IconButton
-    size="large"
-    edge="start"
-    color="inherit"
-    aria-label="logo"
-    sx={{ display: { xs: "none", md: "flex" } }}
-  >
-    <img
-      src={logo4}
-      alt="Logo"
-      style={{ width: "auto", height: "45px" }}
-    />
-  </IconButton>
-</div>
+          <div style={{ marginLeft: "auto" }}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="logo"
+              sx={{ display: { xs: "none", md: "flex" } }}
+            >
+              <img
+                src={logo4}
+                alt="Logo"
+                style={{ width: "auto", height: "45px" }}
+              />
+            </IconButton>
+          </div>
           <Typography
             variant="h6"
             component="div"
@@ -185,13 +243,108 @@ function Navbar() {
           </Typography>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Button color="inherit">Home</Button>
-            <Button color="inherit">Participate</Button>
-            <Button color="inherit">Read</Button>
+
+            {/* Participate  */}
+            <Button
+              id="demo-positioned-button-participate"
+              aria-controls={
+                participateOpen ? "demo-positioned-menu-participate" : undefined
+              }
+              aria-haspopup="true"
+              aria-expanded={participateOpen ? "true" : undefined}
+              onClick={handleParticipateClick}
+            >
+              Participate
+            </Button>
+            <Menu
+              sx={{ marginTop: "35px", display: { xs: "none", md: "flex" } }}
+              id="demo-positioned-menu-participate"
+              anchorEl={participateAnchorEl}
+              open={participateOpen}
+              onClose={handleParticipateClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              <MenuItem onClick={handleParticipateClose}>Events</MenuItem>
+              <MenuItem onClick={handleParticipateClose}>
+                Public Consultations
+              </MenuItem>
+            </Menu>
+
+            <Button
+              id="demo-positioned-button-Read"
+              aria-controls={ReadOpen ? "demo-positioned-menu-Read" : undefined}
+              aria-haspopup="true"
+              aria-expanded={ReadOpen ? "true" : undefined}
+              onClick={handleReadClick}
+            >
+              Read
+            </Button>
+            <Menu
+              sx={{ marginTop: "35px", display: { xs: "none", md: "flex" } }}
+              id="demo-positioned-menu-Read"
+              anchorEl={ReadAnchorEl}
+              open={ReadOpen}
+              onClose={handleReadClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              <MenuItem onClick={handleReadClose}>
+                News & Press Releases
+              </MenuItem>
+            </Menu>
             <Button color="inherit" href="/photogallery">
               Photo Gallery
             </Button>
-            <Button color="inherit">Who We are </Button>
+
+            {/* Who We are */}
+            <Button
+              id="demo-positioned-button-who-we-are"
+              aria-controls={
+                whoWeAreOpen ? "demo-positioned-menu-who-we-are" : undefined
+              }
+              aria-haspopup="true"
+              aria-expanded={whoWeAreOpen ? "true" : undefined}
+              onClick={handleWhoWeAreClick}
+            >
+              Who We Are
+            </Button>
+            <Menu
+              sx={{ marginTop: "35px", display: { xs: "none", md: "flex" } }}
+              id="demo-positioned-menu-who-we-are"
+              anchorEl={whoWeAreAnchorEl}
+              open={whoWeAreOpen}
+              onClose={handleWhoWeAreClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              <MenuItem onClick={handleWhoWeAreClose}>About Us</MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}>FAQs</MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}>Useful Links</MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}>
+                General Feedback
+              </MenuItem>
+            </Menu>
           </Box>
+
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -209,15 +362,42 @@ function Navbar() {
               sx={{ display: { xs: "flex", md: "none" } }}
             >
               <MenuList
-                style={{ color: "#1e88e5", width: "1000px" }}
-                sx={{ textTransform: "uppercase", bgcolor: "f5f5f5" }}
+                sx={{
+                  color: "#1e88e5",
+                  width: "1000px",
+                  textTransform: "uppercase",
+                  bgcolor: "f5f5f5",
+                }}
               >
-                <MenuItem> Home</MenuItem>
-                <MenuItem> Participate</MenuItem>
-                <MenuItem> Read</MenuItem>
-                <MenuItem> Photo Gallery</MenuItem>
-                <MenuItem> Who We are</MenuItem>
-                <MenuItem> Contact us</MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <HomeIcon fontSize="small" />
+                  Home
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <GroupIcon fontSize="small" />
+                  Participate
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <ArticleIcon fontSize="small" />
+                  Read
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <PhotoLibraryIcon fontSize="small" />
+                  Photo Gallery
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <InfoIcon fontSize="small" />
+                  Who We are
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <ContactMailIcon fontSize="small" />
+                  Contact us
+                </MenuItem>
+
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <ContactMailIcon fontSize="small" />
+                  Test Function for Accordion
+                </MenuItem>
               </MenuList>
             </Menu>
           </Box>
@@ -258,8 +438,7 @@ function Navbar() {
           </Search>
         </Toolbar>
       </AppBar>
-      <div></div>
-    </div>
+    </>
   );
 }
 
