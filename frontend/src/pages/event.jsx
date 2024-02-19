@@ -35,6 +35,7 @@ export default function Event() {
             <Box marginLeft={3.5} marginTop={1}>
               <Eventcard
                 title={content.event_topic} // Assuming content_topic is the title
+                eventdate={content.registration_start_date}
                 image={content.event_image}
                 description={content.event_short_description} // Assuming content_short_description is the description
                 url={content.event_url}

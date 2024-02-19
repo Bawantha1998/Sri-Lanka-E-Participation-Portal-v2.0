@@ -11,6 +11,7 @@ import { Parser } from "html-to-react";
 import { Link } from "react-router-dom";
 export default function EventCard({
   title,
+  eventdate,
   image,
   description,
   url,
@@ -33,8 +34,9 @@ export default function EventCard({
           style: { lineHeight: "1", minHeight: "4em", fontWeight: "bold" },
         }}
         title={title}
-       
+        subheader={eventdate}
       />
+       
       <CardMedia
         component="img"
         maxWidth="345px"
