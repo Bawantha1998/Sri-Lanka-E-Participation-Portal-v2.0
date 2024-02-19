@@ -19,7 +19,6 @@ import Accordion from "@mui/material/Accordion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import GroupIcon from "@mui/icons-material/Group";
 import ArticleIcon from "@mui/icons-material/Article";
@@ -80,6 +79,57 @@ function Navbar() {
   };
   // const classes =useStyles()
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  // State and event handlers for the "Participate" button-menu pair
+  const [participateAnchorEl, setParticipateAnchorEl] = useState(null);
+  const [participateOpen, setParticipateOpen] = useState(false);
+
+  const handleParticipateClick = (event) => {
+    setParticipateAnchorEl(event.currentTarget);
+    setParticipateOpen(!participateOpen);
+  };
+
+  const handleParticipateClose = () => {
+    setParticipateAnchorEl(null);
+    setParticipateOpen(false);
+  };
+
+  // State and event handlers for the "Read" button-menu pair
+  const [ReadAnchorEl, setReadAnchorEl] = useState(null);
+  const [ReadOpen, setReadOpen] = useState(false);
+
+  const handleReadClick = (event) => {
+    setReadAnchorEl(event.currentTarget);
+    setReadOpen(!whoWeAreOpen);
+  };
+
+  const handleReadClose = () => {
+    setReadAnchorEl(null);
+    setReadOpen(false);
+  };
+
+  // State and event handlers for the "Who We Are" button-menu pair
+  const [whoWeAreAnchorEl, setWhoWeAreAnchorEl] = useState(null);
+  const [whoWeAreOpen, setWhoWeAreOpen] = useState(false);
+
+  const handleWhoWeAreClick = (event) => {
+    setWhoWeAreAnchorEl(event.currentTarget);
+    setWhoWeAreOpen(!whoWeAreOpen);
+  };
+
+  const handleWhoWeAreClose = () => {
+    setWhoWeAreAnchorEl(null);
+    setWhoWeAreOpen(false);
+  };
+
   return (
     <>
       <AppBar
@@ -101,16 +151,15 @@ function Navbar() {
             <Typography
               sx={{
                 fontSize: {
-                  xs: "9px" ,
+                  xs: "9px",
                   sm: "11px",
                   md: "12px",
                   xl: "13.5px",
                 },
-                marginLeft:{
-                  xs:"38px",
-                  sm:"",
-                  md:"3px"
-                  
+                marginLeft: {
+                  xs: "38px",
+                  sm: "",
+                  md: "3px",
                 },
                 display: { xs: "flex", md: "flex", sm: "flex" },
                 gap: 0.5,
@@ -194,13 +243,108 @@ function Navbar() {
           </Typography>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Button color="inherit">Home</Button>
-            <Button color="inherit">Participate</Button>
-            <Button color="inherit">Read</Button>
+
+            {/* Participate  */}
+            <Button
+              id="demo-positioned-button-participate"
+              aria-controls={
+                participateOpen ? "demo-positioned-menu-participate" : undefined
+              }
+              aria-haspopup="true"
+              aria-expanded={participateOpen ? "true" : undefined}
+              onClick={handleParticipateClick}
+            >
+              Participate
+            </Button>
+            <Menu
+              sx={{ marginTop: "35px", display: { xs: "none", md: "flex" } }}
+              id="demo-positioned-menu-participate"
+              anchorEl={participateAnchorEl}
+              open={participateOpen}
+              onClose={handleParticipateClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              <MenuItem onClick={handleParticipateClose}>Events</MenuItem>
+              <MenuItem onClick={handleParticipateClose}>
+                Public Consultations
+              </MenuItem>
+            </Menu>
+
+            <Button
+              id="demo-positioned-button-Read"
+              aria-controls={ReadOpen ? "demo-positioned-menu-Read" : undefined}
+              aria-haspopup="true"
+              aria-expanded={ReadOpen ? "true" : undefined}
+              onClick={handleReadClick}
+            >
+              Read
+            </Button>
+            <Menu
+              sx={{ marginTop: "35px", display: { xs: "none", md: "flex" } }}
+              id="demo-positioned-menu-Read"
+              anchorEl={ReadAnchorEl}
+              open={ReadOpen}
+              onClose={handleReadClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              <MenuItem onClick={handleReadClose}>
+                News & Press Releases
+              </MenuItem>
+            </Menu>
             <Button color="inherit" href="/photogallery">
               Photo Gallery
             </Button>
-            <Button color="inherit">Who We are </Button>
+
+            {/* Who We are */}
+            <Button
+              id="demo-positioned-button-who-we-are"
+              aria-controls={
+                whoWeAreOpen ? "demo-positioned-menu-who-we-are" : undefined
+              }
+              aria-haspopup="true"
+              aria-expanded={whoWeAreOpen ? "true" : undefined}
+              onClick={handleWhoWeAreClick}
+            >
+              Who We Are
+            </Button>
+            <Menu
+              sx={{ marginTop: "35px", display: { xs: "none", md: "flex" } }}
+              id="demo-positioned-menu-who-we-are"
+              anchorEl={whoWeAreAnchorEl}
+              open={whoWeAreOpen}
+              onClose={handleWhoWeAreClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              <MenuItem onClick={handleWhoWeAreClose}>About Us</MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}>FAQs</MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}>Useful Links</MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}>
+                General Feedback
+              </MenuItem>
+            </Menu>
           </Box>
+
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
