@@ -2,12 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Parser } from "html-to-react";
 import { useParams } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
-import { SlArrowRight } from "react-icons/sl";
-import { FaFacebook } from "react-icons/fa";
-import { AiFillTwitterCircle } from "react-icons/ai";
-import { ImMail4 } from "react-icons/im";
-import { TfiSharethisAlt } from "react-icons/tfi";
+
+
 import { API_BASE_URL } from "../../utils/constants";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -86,9 +82,9 @@ const EventView = () => {
           marginTop={2}
           borderRadius={5}
         >
-          <Row>
+          
             
-            <Col lg={8}>
+         
               <div className="content-use-of-terms">
                 <p className="font-style-public-p">
                   {/* <b>Welcome to the ConnectSL website ('the website')!</b> */}
@@ -166,9 +162,9 @@ const EventView = () => {
                   {new Parser().parse(event.event_description)}
                 </p>
               </div>
-            </Col>
-            <Col lg={2}></Col>
-          </Row>
+           
+       
+         
           </Grid>
    
  

@@ -9,15 +9,26 @@ import Button from "@mui/material/Button";
 import { API_IMG_URL } from "../../utils/constants";
 import { Parser } from "html-to-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import moment from 'moment';
 export default function EventCard({
   title,
   eventdate,
   image,
   description,
   url,
-}) {
+})
+
+{
+ 
+    const cardVariants = {
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    }
   const [hovered, setHovered] = React.useState(false);
+  
   return (
+    <motion.div initial="hidden" animate="visible" variants={cardVariants}>
     <Card
       sx={{
         maxWidth: 350,
@@ -34,7 +45,9 @@ export default function EventCard({
           style: { lineHeight: "1", minHeight: "4em", fontWeight: "bold" },
         }}
         title={title}
-        subheader={eventdate}
+        subheader={`${moment(eventdate).format(
+          "MMMM DD, YYYY"
+        )}`}
       />
        
       <CardMedia
@@ -78,5 +91,6 @@ export default function EventCard({
         </Link>
       </CardActions>
     </Card>
+    </motion.div>
   );
 }
