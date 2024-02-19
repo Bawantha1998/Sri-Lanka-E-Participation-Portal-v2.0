@@ -1,5 +1,4 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
@@ -7,47 +6,91 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Imgs from "../../images/abc.jpg";
+import { API_IMG_URL } from "../../utils/constants";
+import { Parser } from "html-to-react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import moment from 'moment';
+export default function EventCard({
+  title,
+  eventdate,
+  image,
+  description,
+  url,
+})
 
-export default function EventCard() {
-  const handleExpandClick = () => {};
-
+{
+ 
+    const cardVariants = {
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    }
+  const [hovered, setHovered] = React.useState(false);
+  
   return (
-    <Card sx={{ maxWidth: 350 }}>
+    <motion.div initial="hidden" animate="visible" variants={cardVariants}>
+    <Card
+      sx={{
+        maxWidth: 350,
+        "&:hover": {
+          bgcolor: hovered ? "#D3D3D3" : "#",
+        },
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <CardHeader
-        title={
-          <div style={{ fontSize: "20px" }}>
-            <b> Guidelines for Digital Signatures</b>
-          </div>
-        }
-        subheader="September 14, 2016"
+        titleTypographyProps={{
+          variant: "h6",
+          style: { lineHeight: "1", minHeight: "4em", fontWeight: "bold" },
+        }}
+        title={title}
+        subheader={`${moment(eventdate).format(
+          "MMMM DD, YYYY"
+        )}`}
       />
-      <CardMedia component="img" height="194" image={Imgs} alt="Paella dish" />
+       
+      <CardMedia
+        component="img"
+        maxWidth="345px"
+        height="194px"
+        src={`${API_IMG_URL}/${image}`} // Accessing image from props
+        alt={title}
+      />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          Guidelines for Digital Signatures" is a key milestone in ICTA policy
-          roadmap, which is already being approved and recognized by the
-          government for implementation. The guidelines aim to direct the
-          government staff towards the adoption of a digital signature to
-          authenticate official documents. The effective usage of digital..
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+          }}
+        >
+          {new Parser().parse(description)}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button
-          sx={{
-            bgcolor: "#345AE3",
-            color: "#FFFFFF",
-            fontSize: 13,
-            fontWeight: "",
-            "&:hover": {
-              bgcolor: "#2a487e", // Change this to the desired hover color
-            },
-          }}
-          size="small"
-        >
-          View event details
-        </Button>
+        <Link to={url}>
+          <Button
+            sx={{
+              bgcolor: "#345AE3",
+              color: "#FFFFFF",
+              fontSize: 13,
+              fontWeight: "",
+              "&:hover": {
+                bgcolor: "#2A487E",
+              },
+            }}
+            size="small"
+          >
+            View More
+          </Button>
+        </Link>
       </CardActions>
     </Card>
+    </motion.div>
   );
 }
