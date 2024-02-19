@@ -3,7 +3,7 @@ import Newspress from "./pages/Newspress";
 import Allimagegallery from "./pages/allimagegallery";
 import Photogallery from "./pages/photogallery";
 import UsefulLinks from "./pages/UsefulLinks";
-import Events from "./components/Event/EventView"
+import Events from "./components/Event/EventView";
 import PublicConsultations from "./pages/PublicConsultations";
 import Event from "./pages/event";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -36,10 +36,10 @@ function App() {
         />
 
         <Route path="/consultations/events" element={<Event />} />
-        <Route path='/consultations/events/:event_id'element={<Events/>}/>
+        <Route path="/consultations/events/:event_id" element={<Events />} />
 
         <Route path="/Allphotogallery" element={<Allimagegallery />} />
-        <Route path="/Addfeedback/:content_id" element={<FeedBack/>} />
+        <Route path="/Addfeedback/:content_id" element={<FeedBack />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/useful-links" element={<UsefulLinks />} />
         <Route path="/termofuse" element={<Termofuse />} />
@@ -51,7 +51,7 @@ function App() {
           path="/public-consultationsview"
           element={<PublicConsultationsView />}
         />
-        
+
         <Route path="/newsletter" element={<Newsletter />} />
         <Route
           path="/consultations/public-consultations/:content_id"
