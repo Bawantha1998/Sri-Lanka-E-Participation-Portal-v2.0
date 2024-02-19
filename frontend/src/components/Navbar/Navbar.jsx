@@ -19,7 +19,6 @@ import Accordion from "@mui/material/Accordion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import GroupIcon from "@mui/icons-material/Group";
@@ -82,9 +81,7 @@ function Navbar() {
   // const classes =useStyles()
 
   return (
-    <div>
-   
-
+    <>
       <AppBar
         position="fixed"
         style={{ color: "#1e88e5" }}
@@ -102,13 +99,18 @@ function Navbar() {
             }}
           >
             <Typography
-              style={{ marginLeft: "25px" }}
               sx={{
                 fontSize: {
-                  xs: "10px",
+                  xs: "9px" ,
                   sm: "11px",
                   md: "12px",
                   xl: "13.5px",
+                },
+                marginLeft:{
+                  xs:"38px",
+                  sm:"",
+                  md:"3px"
+                  
                 },
                 display: { xs: "flex", md: "flex", sm: "flex" },
                 gap: 0.5,
@@ -215,43 +217,44 @@ function Navbar() {
               onClick={closeMenu}
               sx={{ display: { xs: "flex", md: "none" } }}
             >
-              {/* <MenuList
-                style={{ color: "#1e88e5", width: "1000px" }}
-                sx={{ textTransform: "uppercase", bgcolor: "f5f5f5" }}
+              <MenuList
+                sx={{
+                  color: "#1e88e5",
+                  width: "1000px",
+                  textTransform: "uppercase",
+                  bgcolor: "f5f5f5",
+                }}
               >
-                <MenuItem> <HomeIcon fontSize="small"/>Home</MenuItem>
-                <MenuItem>  <GroupIcon fontSize="small" />Participate</MenuItem>
-                <MenuItem>  <ArticleIcon fontSize="small" />Read</MenuItem>
-                <MenuItem> <PhotoLibraryIcon fontSize="small" /> Photo Gallery</MenuItem>
-                <MenuItem>    <InfoIcon fontSize="small" />Who We are</MenuItem>
-                <MenuItem>  <ContactMailIcon fontSize="small" /> Contact us</MenuItem>
-              </MenuList> */}
-              <MenuList sx={{ color: "#1e88e5", width: "1000px", textTransform: "uppercase", bgcolor: "f5f5f5" }}>
-            <MenuItem sx={{ display: "flex", gap: 1 }}>
-              <HomeIcon fontSize="small" />
-              Home
-            </MenuItem>
-            <MenuItem sx={{ display: "flex", gap: 1 }}>
-              <GroupIcon fontSize="small" />
-              Participate
-            </MenuItem>
-            <MenuItem sx={{ display: "flex", gap: 1 }}>
-              <ArticleIcon fontSize="small" />
-              Read
-            </MenuItem>
-            <MenuItem sx={{ display: "flex", gap: 1 }}>
-              <PhotoLibraryIcon fontSize="small" />
-              Photo Gallery
-            </MenuItem>
-            <MenuItem sx={{ display: "flex", gap: 1 }}>
-              <InfoIcon fontSize="small" />
-              Who We are
-            </MenuItem>
-            <MenuItem sx={{ display: "flex", gap: 1 }}>
-              <ContactMailIcon fontSize="small" />
-              Contact us
-            </MenuItem>
-          </MenuList>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <HomeIcon fontSize="small" />
+                  Home
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <GroupIcon fontSize="small" />
+                  Participate
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <ArticleIcon fontSize="small" />
+                  Read
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <PhotoLibraryIcon fontSize="small" />
+                  Photo Gallery
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <InfoIcon fontSize="small" />
+                  Who We are
+                </MenuItem>
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <ContactMailIcon fontSize="small" />
+                  Contact us
+                </MenuItem>
+
+                <MenuItem sx={{ display: "flex", gap: 1 }}>
+                  <ContactMailIcon fontSize="small" />
+                  Test Function for Accordion
+                </MenuItem>
+              </MenuList>
             </Menu>
           </Box>
 
@@ -291,8 +294,7 @@ function Navbar() {
           </Search>
         </Toolbar>
       </AppBar>
-      <div></div>
-    </div>
+    </>
   );
 }
 
