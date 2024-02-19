@@ -3,8 +3,9 @@ import Newspress from "./pages/Newspress";
 import Allimagegallery from "./pages/allimagegallery";
 import Photogallery from "./pages/photogallery";
 import UsefulLinks from "./pages/UsefulLinks";
-import Event from "./pages/event";
+import Events from "./components/Event/EventView"
 import PublicConsultations from "./pages/PublicConsultations";
+import Event from "./pages/event";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FeedBack from "./components/Feedback/FeedBack";
 import GenaralFeedback from "./components/GenaralFeedback/Genaral FeedBack";
@@ -32,7 +33,8 @@ function App() {
           path="/consultations/public-consultations"
           element={<PublicConsultations />}
         />
-        <Route path="/consultations/event" element={<Event />} />
+        <Route path="/consultations/events" element={<Event />} />
+        <Route path='/consultations/events/:event_id'element={<Events/>}/>
         <Route path="/Allphotogallery" element={<Allimagegallery />} />
         <Route path="/Addfeedback/:content_id" element={<FeedBack/>} />
         <Route path="/contact-us" element={<ContactUs />} />
@@ -46,6 +48,7 @@ function App() {
           path="/public-consultationsview"
           element={<PublicConsultationsView />}
         />
+        
         <Route path="/newsletter" element={<Newsletter />} />
         <Route
           path="/consultations/public-consultations/:content_id"
