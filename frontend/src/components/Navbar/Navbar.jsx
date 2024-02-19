@@ -25,6 +25,7 @@ import ArticleIcon from "@mui/icons-material/Article";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import InfoIcon from "@mui/icons-material/Info";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import Event from "../../pages/event";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -271,9 +272,9 @@ function Navbar() {
                 horizontal: "left",
               }}
             >
-              <MenuItem onClick={handleParticipateClose}>Events</MenuItem>
+              <MenuItem onClick={handleParticipateClose}><a href="/consultations/events" style={{textDecoration:"none" ,color:"GrayText"}} >Events</a></MenuItem>
               <MenuItem onClick={handleParticipateClose}>
-                Public Consultations
+              <a href="/consultations/public-consultations" style={{textDecoration:"none" ,color:"GrayText"}} >Public Consultations</a> 
               </MenuItem>
             </Menu>
 
@@ -302,7 +303,7 @@ function Navbar() {
               }}
             >
               <MenuItem onClick={handleReadClose}>
-                News & Press Releases
+               <a href="/news-and-press-releases/latest-news" style={{textDecoration:"none" ,color:"GrayText"}} > News & Press Releases</a>
               </MenuItem>
             </Menu>
             <Button color="inherit" href="/photogallery">
@@ -337,8 +338,8 @@ function Navbar() {
               }}
             >
               <MenuItem onClick={handleWhoWeAreClose}>About Us</MenuItem>
-              <MenuItem onClick={handleWhoWeAreClose}>FAQs</MenuItem>
-              <MenuItem onClick={handleWhoWeAreClose}>Useful Links</MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}><a href="/faqs" style={{textDecoration:"none" ,color:"GrayText"}}> FAQs</a></MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}> <a href="/useful-links" style={{textDecoration:"none" ,color:"GrayText"}} >Useful Links</a></MenuItem>
               <MenuItem onClick={handleWhoWeAreClose}>
                 General Feedback
               </MenuItem>

@@ -1,18 +1,19 @@
 import { Grid, Typography } from "@mui/material";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-// import { ArrowRight } from "@mui/icons-material";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import TwitterIcon from "@mui/icons-material/Twitter";
-// import MailIcon from "@mui/icons-material/Mail";
-// import ShareIcon from "@mui/icons-material/Share";
 
 export default function FAQs() {
   return (
     <div>
       <br />
       <br />
-      <Grid container spacing={2} style={{color:""}}>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Grid container spacing={2} style={{ color: "" }}>
         <Grid item lg={2}>
           <div className="images-public-style"></div>
         </Grid>
