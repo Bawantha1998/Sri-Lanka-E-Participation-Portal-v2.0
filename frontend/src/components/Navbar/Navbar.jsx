@@ -26,6 +26,8 @@ import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import InfoIcon from "@mui/icons-material/Info";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import Event from "../../pages/event";
+import LockIcon from '@mui/icons-material/Lock';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -197,14 +199,14 @@ function Navbar() {
                 >
                   <p>
                     {" "}
-                    <b> Official Websites use .gov.lk</b> <br />A .gov.lk
+                    <b> <AccountBalanceIcon fontSize="inherit"/> Official Websites use .gov.lk</b> <br />A .gov.lk
                     website belongs <br />
                     to an official government <br />
                     organization in the Sri Lanka.
                   </p>
 
                   <p>
-                    <b> Secure .gov.lk websites use HTTPS</b> <br />A lock or
+                    <b><LockIcon fontSize="inherit" /> Secure .gov.lk websites use HTTPS</b> <br />A lock or
                     https: // means you've safely
                     <br /> connected to the .gov.lk website. <br />
                     Share sensitive information only on <br />

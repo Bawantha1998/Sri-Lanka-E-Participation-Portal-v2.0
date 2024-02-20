@@ -50,7 +50,10 @@ const Footer = () => {
               <FaDribbbleSquare size={30} />
             </IconContainer>
           </Grid>
+
+          {/* Right Grid */}
           <Grid item xs={12} lg={8} container spacing={4}>
+            {/* Section 1 */}
             <Grid item xs={12} md={6} lg={3} component={SectionContainer}>
               <Typography variant="h6" gutterBottom>
                 Participate
@@ -60,7 +63,8 @@ const Footer = () => {
                 <li>Public Consultation</li>
               </ul>
             </Grid>
-            {/* Other Grid items go here */}
+
+            {/* Section 2 */}
             <Grid item xs={12} md={6} lg={3} component={SectionContainer}>
               <Typography variant="h6" gutterBottom>
                 About Us
@@ -69,10 +73,10 @@ const Footer = () => {
                 <li>About ConnectSL</li>
                 <li>General Feedback</li>
                 <li>SiteMap</li>
-
               </ul>
             </Grid>
 
+            {/* Section 3 */}
             <Grid item xs={12} md={6} lg={3} component={SectionContainer}>
               <Typography variant="h6" gutterBottom>
                 User Policies
@@ -82,7 +86,8 @@ const Footer = () => {
                 <li>Terms of Participation</li>
               </ul>
             </Grid>
-
+            
+            {/* Section 4 */}
             <Grid item xs={12} md={6} lg={3} component={SectionContainer}>
               <Typography variant="h6" gutterBottom>
                 For Media

@@ -25,7 +25,7 @@ export default function Event() {
   }, []);
   return (
     <div>
-      <Grid container spacing={2}>
+      <Grid container spacing={2}style={{marginTop:"86px"}} >
         <Grid item xs={12}>
           <Evnetwebcrum />
         </Grid>
