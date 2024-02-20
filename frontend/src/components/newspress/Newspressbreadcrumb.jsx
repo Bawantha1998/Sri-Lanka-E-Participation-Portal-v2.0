@@ -38,7 +38,7 @@ export default function newspressbreadcrumb() {
 
   return (
     <Box sx={{ bgcolor: "#0178ba", width: "100%", height: "auto" }}>
-      <Box marginLeft={3.5} marginTop={2}>
+      <Box marginLeft={4} marginTop={2}>
         <Stack spacing={2}>
           <Box>
             <Breadcrumbs
