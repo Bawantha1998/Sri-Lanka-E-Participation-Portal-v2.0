@@ -1,25 +1,25 @@
 import { Grid, Typography } from "@mui/material";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import FaqsBreadcrumb from "../components/FAQS/FaqsBreadcrumb";
 
 export default function FAQs() {
   return (
     <div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <Grid container spacing={2}>
+        <Grid container item sm={12} md={12} style={{ marginTop: "110px" }}>
+          <FaqsBreadcrumb />
+        </Grid>
+      </Grid>
+
       <Grid container spacing={2} style={{ color: "" }}>
         <Grid item lg={2}>
-          <div className="images-public-style"></div>
+          {/* <div className="images-public-style"></div> */}
         </Grid>
         <Grid item lg={8}>
           <div className="content-body-top">
             <Typography variant="h5">
+              <br />
               <b>FAQs on ConnectSL's Feedback Process</b>
             </Typography>
             <br />

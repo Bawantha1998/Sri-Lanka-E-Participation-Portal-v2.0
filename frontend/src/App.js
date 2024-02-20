@@ -59,7 +59,7 @@ function App() {
           element={<PublicConsultationView />}
         />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

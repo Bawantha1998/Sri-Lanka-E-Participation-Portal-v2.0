@@ -23,7 +23,7 @@ export default function Photogallery() {
   
   return (
     <div>
-      <Grid container spacing={2}>
+      <Grid container spacing={2}style={{marginTop:"102px"}} >
         <Grid container item sm={12} md={12}>
           <Gallerybreadcrumb />
         </Grid>
