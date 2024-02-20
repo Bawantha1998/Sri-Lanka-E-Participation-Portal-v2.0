@@ -272,9 +272,21 @@ function Navbar() {
                 horizontal: "left",
               }}
             >
-              <MenuItem onClick={handleParticipateClose}><a href="/consultations/events" style={{textDecoration:"none" ,color:"GrayText"}} >Events</a></MenuItem>
               <MenuItem onClick={handleParticipateClose}>
-              <a href="/consultations/public-consultations" style={{textDecoration:"none" ,color:"GrayText"}} >Public Consultations</a> 
+                <a
+                  href="/consultations/events"
+                  style={{ textDecoration: "none", color: "GrayText" }}
+                >
+                  Events
+                </a>
+              </MenuItem>
+              <MenuItem onClick={handleParticipateClose}>
+                <a
+                  href="/consultations/public-consultations"
+                  style={{ textDecoration: "none", color: "GrayText" }}
+                >
+                  Public Consultations
+                </a>
               </MenuItem>
             </Menu>
 
@@ -303,7 +315,13 @@ function Navbar() {
               }}
             >
               <MenuItem onClick={handleReadClose}>
-               <a href="/news-and-press-releases/latest-news" style={{textDecoration:"none" ,color:"GrayText"}} > News & Press Releases</a>
+                <a
+                  href="/news-and-press-releases/latest-news"
+                  style={{ textDecoration: "none", color: "GrayText" }}
+                >
+                  {" "}
+                  News & Press Releases
+                </a>
               </MenuItem>
             </Menu>
             <Button color="inherit" href="/photogallery">
@@ -338,14 +356,30 @@ function Navbar() {
               }}
             >
               <MenuItem onClick={handleWhoWeAreClose}>About Us</MenuItem>
-              <MenuItem onClick={handleWhoWeAreClose}><a href="/faqs" style={{textDecoration:"none" ,color:"GrayText"}}> FAQs</a></MenuItem>
-              <MenuItem onClick={handleWhoWeAreClose}> <a href="/useful-links" style={{textDecoration:"none" ,color:"GrayText"}} >Useful Links</a></MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}>
+                <a
+                  href="/faqs"
+                  style={{ textDecoration: "none", color: "GrayText" }}
+                >
+                  {" "}
+                  FAQs
+                </a>
+              </MenuItem>
+              <MenuItem onClick={handleWhoWeAreClose}>
+                {" "}
+                <a
+                  href="/useful-links"
+                  style={{ textDecoration: "none", color: "GrayText" }}
+                >
+                  Useful Links
+                </a>
+              </MenuItem>
               <MenuItem onClick={handleWhoWeAreClose}>
                 General Feedback
               </MenuItem>
             </Menu>
           </Box>
-
+              {/* Mobile view  */}
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -395,10 +429,6 @@ function Navbar() {
                   Contact us
                 </MenuItem>
 
-                <MenuItem sx={{ display: "flex", gap: 1 }}>
-                  <ContactMailIcon fontSize="small" />
-                  Test Function for Accordion
-                </MenuItem>
               </MenuList>
             </Menu>
           </Box>
