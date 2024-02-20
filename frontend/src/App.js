@@ -18,6 +18,7 @@ import Newsletter from "./pages/Newsletter";
 import PublicConsultationsView from "./components/publicConsultations/PublicConsultationView";
 import Comment from "./components/Comment/Comment";
 import PublicConsultationView from "./components/publicConsultations/PublicConsultationView";
+import TestPath from "./components/Test-Navbar/test";
 function App() {
   return (
     <BrowserRouter>
@@ -33,8 +34,10 @@ function App() {
           path="/consultations/public-consultations"
           element={<PublicConsultations />}
         />
+
         <Route path="/consultations/events" element={<Event />} />
         <Route path='/consultations/events/:event_id'element={<Events/>}/>
+
         <Route path="/Allphotogallery" element={<Allimagegallery />} />
         <Route path="/Addfeedback/:content_id" element={<FeedBack/>} />
         <Route path="/contact-us" element={<ContactUs />} />
