@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  Avatar, Grid, Paper, IconButton, Box } from "@material-ui/core";
+import { Avatar, Grid, Box } from "@material-ui/core";
 import { Favorite as FavoriteIcon, Star as StarIcon } from "@material-ui/icons";
 import Rating from "@material-ui/lab/Rating";
 import { motion } from "framer-motion";
@@ -7,23 +7,18 @@ import { API_BASE_URL } from "../../utils/constants";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
-const imgLink =
-  "";
+import { GoogleLogin } from 'react-google-login';
 
-    // Add more properties if your data structure contains them
- 
+import {gapi} from 'gapi-script';
+
+const imgLink = "";
+
 export default function Comment() {
-    const [feedback, setFeedback] = useState({
-        first_name: "",
-        feedback: "",
-        ctime: "",
-        content_id: "",
-      });
+    const [feedback, setFeedback] = useState([]);
     const { content_id } = useParams();
-    
+    const [user, setUser] = useState(null); // To store user information
+    const [likedComments, setLikedComments] = useState(new Set()); // Track liked comments
 
-
-    
     useEffect(() => {
         axios
           .get(`${API_BASE_URL}/feedback/${content_id}`)
@@ -33,14 +28,25 @@ export default function Comment() {
           .catch((error) => {
             console.error("Error--->>", error);
           });
-      }, [content_id]);
+    }, [content_id]);
+
+    useEffect(() => {
+        function start(){
+            gapi.client.init({
+                clientId:"303127054814-d9n8lg7uvki3qbvhtsn4ltr4j1qgea0g.apps.googleusercontent.com",
+                scope:""
+            })
+        };
+        gapi.load('client:auth2', start);
+
+    });
 
     const [likes, setLikes] = useState(() => {
-        const storedLikes = JSON.parse(localStorage.getItem('commentLikes')) || new Array(5).fill(0);
+        const storedLikes = JSON.parse(localStorage.getItem('commentLikes')) || new Array(feedback.length).fill(0);
         return storedLikes;
     });
     const [ratings, setRatings] = useState(() => {
-        const storedRatings = JSON.parse(localStorage.getItem('commentRatings')) || new Array(5).fill(0);
+        const storedRatings = JSON.parse(localStorage.getItem('commentRatings')) || new Array(feedback.length).fill(0);
         return storedRatings;
     });
 
@@ -49,76 +55,89 @@ export default function Comment() {
         localStorage.setItem('commentRatings', JSON.stringify(ratings));
     }, [likes, ratings]);
 
-    const handleLikee = (num) => {
+    const handleLike = (index) => {
+        if (!user) {
+            alert('Please login with Google to like feedback.');
+            return;
+        }
+
         const updatedLikes = [...likes];
-        updatedLikes[num]++;
+        if (likedComments.has(index)) {
+            updatedLikes[index]--;
+            setLikedComments(prevLikedComments => {
+                const updatedSet = new Set(prevLikedComments);
+                updatedSet.delete(index);
+                return updatedSet;
+            });
+        } else {
+            updatedLikes[index]++;
+            setLikedComments(prevLikedComments => new Set([...prevLikedComments, index]));
+        }
         setLikes(updatedLikes);
-        updateStarColor(num);
+        updateStarColor(index);
     };
 
-    const resetLikes = () => {
-        const defaultLikes = new Array(5).fill(0);
-        setLikes(defaultLikes);
-        setRatings(defaultLikes);
-        localStorage.removeItem('commentLikes');
-        localStorage.removeItem('commentRatings');
-    };
-  
-    const updateStarColor = (num) => {
+    const updateStarColor = (index) => {
         const updatedRatings = [...ratings];
-        const totalLikes = likes[num];
-        const fullStars = Math.floor(totalLikes / 10); // Calculate full stars based on total likes
-        const remainingLikes = totalLikes % 10; // Calculate remaining likes
-        let averageRating = fullStars + (remainingLikes >= 3 ? 0.5 : 0); // Add half star if remaining likes are 3 or more
+        const totalLikes = likes[index];
+        const fullStars = Math.floor(totalLikes / 10);
+        const remainingLikes = totalLikes % 10;
+        let averageRating = fullStars + (remainingLikes >= 3 ? 0.5 : 0);
 
-        // Update the ratings array
-        updatedRatings[num] = averageRating;
+        updatedRatings[index] = averageRating;
         setRatings(updatedRatings);
+    };
+
+    const handleGoogleLoginSuccess = (response) => {
+        setUser(response.profileObj); // Store user information upon successful login
+    };
+
+    const handleGoogleLoginFailure = (error) => {
+        console.error('Google login failed', error);
     };
 
     return (
         <div style={{ padding: 10, display: "flex", justifyContent: "right", alignItems: "right", flexDirection: "column" }}>
             <h1>Feedback</h1>
-            {/* <Button variant="contained" color="primary" onClick={resetLikes}>Reset Likes</Button> */}
-            {Array.isArray(feedback) && feedback.map((data, i) => (
-                <Box key={i} width="100%" my={2}>
-                    <motion.div 
-                        key={i} 
-                        initial={{ x: -200, opacity: 0 }} 
-                        animate={{ x: 0, opacity: 1 }} 
-                        transition={{ delay: i * 0.7 }}
+            <GoogleLogin
+                clientId="303127054814-d9n8lg7uvki3qbvhtsn4ltr4j1qgea0g.apps.googleusercontent.com"
+                buttonText="Login with Google"
+                onSuccess={handleGoogleLoginSuccess}
+                onFailure={handleGoogleLoginFailure}
+                cookiePolicy={'single_host_origin'}
+            />
+            {feedback.map((data, index) => (
+                <Box key={index} width="100%" my={2}>
+                    <motion.div
+                        key={index}
+                        initial={{ x: -200, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: index * 0.7 }}
                     >
-                        {/* <Paper style={{ padding: "40px 20px"}}> */}
-                            <Grid container wrap="nowrap" spacing={2}>
-                                <Grid item>
-                                    <Avatar alt="Remy Sharp" src={imgLink} />
-                                </Grid>
-                                <Grid justifyContent="left" item xs zeroMinWidth>
-                                    <h4 style={{ margin: 0, textAlign: "left" }}> {data.first_name}</h4>
-                                    <p style={{ textAlign: "left" }}>
-                                    {data.feedback}
-                                    </p>
-                                    <p style={{ textAlign: "left", color: "gray" }}>
-                                    {moment(data.ctime).format("YYYY-MM-DD")}
-                                    </p>
+                        <Grid container wrap="nowrap" spacing={2}>
+                            <Grid item>
+                                <Avatar alt="Remy Sharp" src={imgLink} />
+                            </Grid>
+                            <Grid justifyContent="left" item xs zeroMinWidth>
+                                <h4 style={{ margin: 0, textAlign: "left" }}>{data.first_name}</h4>
+                                <p style={{ textAlign: "left" }}>{data.feedback}</p>
+                                <p style={{ textAlign: "left", color: "gray" }}>{moment(data.ctime).format("YYYY-MM-DD")}</p>
+                                {user && (
                                     <Box display="flex" alignItems="center">
-                                  
-                                            <FavoriteIcon  onClick={() => handleLikee(i)} style={{ color: "blue" }} />
-                                     
-                                        <span>{likes[i]}</span>
+                                        <FavoriteIcon onClick={() => handleLike(index)} style={{ color: likedComments.has(index) ? "blue" : "grey", cursor: "pointer" }} />
+                                        <span>{likes[index]}</span>
                                         <Box ml={2}>
                                             <Rating
-                                                name={`rating-${i}`}
-                                                value={ratings[i]}
-                                              
+                                                name={`rating-${index}`}
+                                                value={ratings[index]}
                                                 icon={<StarIcon fontSize="inherit" />}
-                                                style={{ color: "#ffc107" }} // Set the color of the stars
+                                                style={{ color: "#ffc107" }}
                                             />
                                         </Box>
                                     </Box>
-                                </Grid>
+                                )}
                             </Grid>
-                        {/* </Paper>  */}
+                        </Grid>
                     </motion.div>
                 </Box>
             ))}
