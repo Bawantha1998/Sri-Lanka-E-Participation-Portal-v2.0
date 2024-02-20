@@ -24,6 +24,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
+      <Route path="/testpath" element={<TestPath />} />
         <Route path="/" element={<Home />} />
         <Route path="/photogallery" element={<Photogallery />} />
         <Route
@@ -58,7 +59,7 @@ function App() {
           element={<PublicConsultationView />}
         />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
