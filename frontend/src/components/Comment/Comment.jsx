@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import { GoogleLogin } from 'react-google-login';
-
 import {gapi} from 'gapi-script';
 
 const imgLink = "";
@@ -99,13 +98,15 @@ export default function Comment() {
     return (
         <div style={{ padding: 10, display: "flex", justifyContent: "right", alignItems: "right", flexDirection: "column" }}>
             <h1>Feedback</h1>
-            <GoogleLogin
-                clientId="303127054814-d9n8lg7uvki3qbvhtsn4ltr4j1qgea0g.apps.googleusercontent.com"
-                buttonText="Login with Google"
-                onSuccess={handleGoogleLoginSuccess}
-                onFailure={handleGoogleLoginFailure}
-                cookiePolicy={'single_host_origin'}
-            />
+            <div style={{marginBottom:"20px"}}>
+                <GoogleLogin
+                    clientId="303127054814-d9n8lg7uvki3qbvhtsn4ltr4j1qgea0g.apps.googleusercontent.com"
+                    buttonText="Login with Google"
+                    onSuccess={handleGoogleLoginSuccess}
+                    onFailure={handleGoogleLoginFailure}
+                    cookiePolicy={'single_host_origin'}
+                />
+            </div>
             {feedback.map((data, index) => (
                 <Box key={index} width="100%" my={2}>
                     <motion.div

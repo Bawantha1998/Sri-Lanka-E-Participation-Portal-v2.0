@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Typography,
-  Menu,
-  MenuList,
-  MenuItem,
-} from "@mui/material";
+import { Box, Button, Typography, Menu, MenuItem } from "@mui/material";
 import React, { useState } from "react";
 import { AppBar, IconButton, Toolbar } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
@@ -23,11 +16,27 @@ import HomeIcon from "@mui/icons-material/Home";
 import GroupIcon from "@mui/icons-material/Group";
 import ArticleIcon from "@mui/icons-material/Article";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
+import EventNoteRoundedIcon from "@mui/icons-material/EventNoteRounded";
+import RecordVoiceOverRoundedIcon from "@mui/icons-material/RecordVoiceOverRounded";
+import NewspaperIcon from "@mui/icons-material/Newspaper";
+import Groups3Icon from "@mui/icons-material/Groups3";
 import InfoIcon from "@mui/icons-material/Info";
+import QuizIcon from "@mui/icons-material/Quiz";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import Event from "../../pages/event";
-import LockIcon from '@mui/icons-material/Lock';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import LockIcon from "@mui/icons-material/Lock";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import ListSubheader from "@mui/material/ListSubheader";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Collapse from "@mui/material/Collapse";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -83,10 +92,12 @@ function Navbar() {
   // const classes =useStyles()
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  //  function override
+  // const open = Boolean(anchorEl);
+  // const handleClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -131,6 +142,83 @@ function Navbar() {
   const handleWhoWeAreClose = () => {
     setWhoWeAreAnchorEl(null);
     setWhoWeAreOpen(false);
+  };
+
+
+  // Mobile 
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElNav2, setAnchorElNav2] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const [open, setOpen] = React.useState(true);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleOpenNavMenu2 = (event) => {
+    setAnchorElNav2(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  const handleCloseNavMenu2 = () => {
+    setAnchorElNav2(null);
+  };
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  // State and event handlers for the "Participate-mobile" button-menu pair
+  const [participatemobileAnchorEl, setParticipatemobileAnchorEl] =
+    useState(null);
+  const [participatemobileOpen, setParticipatemobileOpen] = useState(false);
+
+  const handleParticipatemobileClick = (event) => {
+    setParticipatemobileAnchorEl(event.currentTarget);
+    setParticipatemobileOpen(!participatemobileOpen);
+  };
+
+  const handleParticipatemobileClose = () => {
+    setParticipatemobileAnchorEl(null);
+    setParticipatemobileOpen(false);
+  };
+
+  // State and event handlers for the "Read-mobile" button-menu pair
+  const [readmobileAnchorEl, setReadmobileAnchorEl] = useState(null);
+  const [readmobileOpen, setReadmobileOpen] = useState(false);
+
+  const handleReadmobileClick = (event) => {
+    setReadmobileAnchorEl(event.currentTarget);
+    setReadmobileOpen(!readmobileOpen);
+  };
+
+  const handleReadmobileClose = () => {
+    setReadmobileAnchorEl(null);
+    setReadmobileOpen(false);
+  };
+
+  // State and event handlers for the "Who-We-Are-mobile" button-menu pair
+  const [whowemobileAnchorEl, setWhowemobileAnchorEl] = useState(null);
+  const [whowemobileOpen, setWhowemobileOpen] = useState(false);
+
+  const handleWhowemobileClick = (event) => {
+    setWhowemobileAnchorEl(event.currentTarget);
+    setWhowemobileOpen(!whowemobileOpen);
+  };
+
+  const handleWhowemobileClose = () => {
+    setWhowemobileAnchorEl(null);
+    setWhowemobileOpen(false);
   };
 
   return (
@@ -199,15 +287,22 @@ function Navbar() {
                 >
                   <p>
                     {" "}
-                    <b> <AccountBalanceIcon fontSize="inherit"/> Official Websites use .gov.lk</b> <br />A .gov.lk
-                    website belongs <br />
+                    <b>
+                      {" "}
+                      <AccountBalanceIcon fontSize="inherit" /> Official
+                      Websites use .gov.lk
+                    </b>{" "}
+                    <br />A .gov.lk website belongs <br />
                     to an official government <br />
                     organization in the Sri Lanka.
                   </p>
 
                   <p>
-                    <b><LockIcon fontSize="inherit" /> Secure .gov.lk websites use HTTPS</b> <br />A lock or
-                    https: // means you've safely
+                    <b>
+                      <LockIcon fontSize="inherit" /> Secure .gov.lk websites
+                      use HTTPS
+                    </b>{" "}
+                    <br />A lock or https: // means you've safely
                     <br /> connected to the .gov.lk website. <br />
                     Share sensitive information only on <br />
                     official,secure websites.
@@ -381,57 +476,148 @@ function Navbar() {
               </MenuItem>
             </Menu>
           </Box>
-              {/* Mobile view  */}
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+
+          {/* Mobile view  */}
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
-              edge="start"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
               color="inherit"
-              onClick={openMenu}
             >
-              <MenuRoundedIcon />
+              <MenuIcon />
             </IconButton>
             <Menu
-              style={{ marginTop: "11px" }}
-              anchorEl={anchorNav}
-              open={Boolean(anchorNav)}
-              onClick={closeMenu}
-              sx={{ display: { xs: "flex", md: "none" } }}
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
             >
-              <MenuList
-                sx={{
-                  color: "#1e88e5",
-                  width: "1000px",
-                  textTransform: "uppercase",
-                  bgcolor: "f5f5f5",
-                }}
+              <List
+                sx={{ bgcolor: "background.paper", width: "100%" }}
+                component="nav"
+                aria-labelledby="nested-list-subheader"
+                subheader={
+                  <ListSubheader component="div" id="nested-list-subheader">
+                    {""}
+                  </ListSubheader>
+                }
               >
-                <MenuItem sx={{ display: "flex", gap: 1 }}>
-                  <HomeIcon fontSize="small" />
-                  Home
-                </MenuItem>
-                <MenuItem sx={{ display: "flex", gap: 1 }}>
-                  <GroupIcon fontSize="small" />
-                  Participate
-                </MenuItem>
-                <MenuItem sx={{ display: "flex", gap: 1 }}>
-                  <ArticleIcon fontSize="small" />
-                  Read
-                </MenuItem>
-                <MenuItem sx={{ display: "flex", gap: 1 }}>
-                  <PhotoLibraryIcon fontSize="small" />
-                  Photo Gallery
-                </MenuItem>
-                <MenuItem sx={{ display: "flex", gap: 1 }}>
-                  <InfoIcon fontSize="small" />
-                  Who We are
-                </MenuItem>
-                <MenuItem sx={{ display: "flex", gap: 1 }}>
-                  <ContactMailIcon fontSize="small" />
-                  Contact us
-                </MenuItem>
+                {/* Home  */}
+                <ListItemButton>
+                  <ListItemIcon>
+                    <HomeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="HOME" />
+                </ListItemButton>
 
-              </MenuList>
+                {/* Participation */}
+                <ListItemButton onClick={handleParticipatemobileClick}>
+                  <ListItemIcon>
+                    <GroupIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="PARTICIPATE" />
+                  {participatemobileOpen ? <ExpandLess /> : <ExpandMore />}
+                </ListItemButton>
+                <Collapse
+                  in={participatemobileOpen}
+                  timeout="auto"
+                  unmountOnExit
+                >
+                  <List component="div" disablePadding>
+                    <ListItemButton sx={{ pl: 4 }}>
+                      <ListItemIcon>
+                        <EventNoteRoundedIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="EVENTS" />
+                    </ListItemButton>
+                    <ListItemButton sx={{ pl: 4 }}>
+                      <ListItemIcon>
+                        <RecordVoiceOverRoundedIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="PUBLIC CONSULTATIONS" />
+                    </ListItemButton>
+                  </List>
+                </Collapse>
+
+                {/* Read */}
+                <ListItemButton onClick={handleReadmobileClick}>
+                  <ListItemIcon>
+                    <ArticleIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="READ" />
+                  {readmobileOpen ? <ExpandLess /> : <ExpandMore />}
+                </ListItemButton>
+                <Collapse in={readmobileOpen} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    <ListItemButton sx={{ pl: 4 }}>
+                      <ListItemIcon>
+                        <NewspaperIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="NEWS & PRESS RELEASE" />
+                    </ListItemButton>
+                  </List>
+                </Collapse>
+
+                {/* Photo Gallery */}
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PhotoLibraryIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="PHOTO GALLERY" />
+                </ListItemButton>
+
+                {/* Who We are */}
+                <ListItemButton onClick={handleWhowemobileClick}>
+                  <ListItemIcon>
+                    <Groups3Icon />
+                  </ListItemIcon>
+                  <ListItemText primary="WHO WE ARE" />
+                  {whowemobileOpen ? <ExpandLess /> : <ExpandMore />}
+                </ListItemButton>
+                <Collapse in={whowemobileOpen} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    <ListItemButton sx={{ pl: 4 }}>
+                      <ListItemIcon>
+                        <InfoIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="ABOUT US" />
+                    </ListItemButton>
+                    <ListItemButton sx={{ pl: 4 }}>
+                      <ListItemIcon>
+                        <QuizIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="FAQs" />
+                    </ListItemButton>
+                    <ListItemButton sx={{ pl: 4 }}>
+                      <ListItemIcon>
+                        <MenuBookIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="USEFUL LINKS" />
+                    </ListItemButton>
+                    <ListItemButton sx={{ pl: 4 }}>
+                      <ListItemIcon>
+                        <ThumbUpAltIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="GENERAL FEEDBACK" />
+                    </ListItemButton>
+                  </List>
+                </Collapse>
+              </List>
             </Menu>
           </Box>
 
